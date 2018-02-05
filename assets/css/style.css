@@ -1,0 +1,8 @@
+.parraHeader {
+  position: absolute;
+  opacity: .6;
+  z-index: 2;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
