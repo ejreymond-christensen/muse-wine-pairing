@@ -1,10 +1,22 @@
 html{
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
+  color: #2C2C2C;
+  position: relative;
+}
+
+html::after{
+  content: "";
   background-image: url("../imgs/todd-quackenbush-700.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  color: #2C2C2C;
+  opacity: .8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .parallaxHeading {
