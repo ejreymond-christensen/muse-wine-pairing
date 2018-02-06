@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="appBackground">
 
 <head>
   <meta charset="utf-8">
@@ -23,40 +23,41 @@
         <h5 class="cursive">Cooking</h5>
         <hr class="hrTitle">
         <div class="input-field col s12">
-          <select multiple class="icons">
-              <option value="" disabled selected>Choose your style</option>
-              <option value="" data-icon="images/office.jpg" class="circle">Tex-Mex</option>
-              <option value="" data-icon="images/office.jpg" class="circle">French</option>
-              <option value="" data-icon="images/yuna.jpg" class="circle">Italian</option>
-              <option value="" data-icon="images/sample-1.jpg" class="circle">Chinese</option>
-              <option value="" data-icon="images/office.jpg" class="circle">Cajun</option>
-              <option value="" data-icon="images/yuna.jpg" class="circle">Americana</option>
-              <option value="" data-icon="images/yuna.jpg" class="circle">South American</option>
-              <option value="" data-icon="images/yuna.jpg" class="circle">Middle Eastern</option>
-              <option value="" data-icon="images/yuna.jpg" class="circle">African</option>
+          <select multiple class="icons" id="cuisine">
+              <option value="null" disabled selected>Choose your style</option>
+              <option value="american" data-icon="images/office.jpg" class="circle">American</option>
+              <option value="asian" data-icon="images/office.jpg" class="circle">Asian</option>
+              <option value="cajun" data-icon="images/yuna.jpg" class="circle">Cajun & Creole</option>
+              <option value="french" data-icon="images/sample-1.jpg" class="circle">French</option>
+              <option value="indian" data-icon="images/office.jpg" class="circle">Indian</option>
+              <option value="italian" data-icon="images/yuna.jpg" class="circle">Italian</option>
+              <option value="japanese" data-icon="images/yuna.jpg" class="circle">Japanese</option>
+              <option value="mediterranean" data-icon="images/yuna.jpg" class="circle">Mediterranean</option>
+              <option value="mexican" data-icon="images/yuna.jpg" class="circle">Mexican</option>
+              <option value="southwestern" data-icon="images/yuna.jpg" class="circle">Southwestern</option>
             </select>
           <label>Select your Cuisine</label>
         </div>
         <div multiple class="input-field col s12">
-          <select class="icons">
-              <option value="" disabled selected>Choose your meat</option>
-              <option value="" data-icon="assets/imgs/beef.jpg" class="circle">Beef</option>
-              <option value="" data-icon="assets/imgs/chicken.jpg" class="circle">Chicken</option>
-              <option value="" data-icon="assets/imgs/pork.jpg" class="circle">Pork</option>
-              <option value="" data-icon="assets/imgs/lamb.jpg" class="circle">Lamb</option>
-              <option value="" data-icon="assets/imgs/fish.jpg" class="circle">Fish</option>
-              <option value="" data-icon="assets/imgs/seafood.jpg" class="circle">Seafood</option>
+          <select class="icons" id="meat">
+              <option value="null" disabled selected>Choose your meat</option>
+              <option value="beef" data-icon="assets/imgs/beef.jpg" class="circle">Beef</option>
+              <option value="chicken" data-icon="assets/imgs/chicken.jpg" class="circle">Chicken</option>
+              <option value="fish" data-icon="assets/imgs/fish.jpg" class="circle">Fish</option>
+              <option value="lamb" data-icon="assets/imgs/lamb.jpg" class="circle">Lamb</option>
+              <option value="pork" data-icon="assets/imgs/pork.jpg" class="circle">Pork</option>
+              <option value="seafood" data-icon="assets/imgs/seafood.jpg" class="circle">Seafood</option>
             </select>
           <label>Select your Protein</label>
         </div>
         <div class="input-field col s12">
-          <select multiple class="icons">
-              <option value="" disabled selected>Choose your options</option>
-              <option value="" data-icon="assets/imgs/beef.jpg" class="circle">Rice</option>
-              <option value="" data-icon="assets/imgs/beef.jpg" class="circle">Potatoes</option>
-              <option value="" data-icon="images/yuna.jpg" class="circle">Tomatoes</option>
-              <option value="" data-icon="images/sample-1.jpg" class="circle">Beans</option>
-              <option value="" data-icon="images/office.jpg" class="circle">Garlic</option>
+          <select multiple class="icons" id="ingredients">
+              <option value="null" disabled selected>Choose your options</option>
+              <option value="rice" data-icon="assets/imgs/beef.jpg" class="circle">Rice</option>
+              <option value="potatoes" data-icon="assets/imgs/beef.jpg" class="circle">Potatoes</option>
+              <option value="tomatoes" data-icon="images/yuna.jpg" class="circle">Tomatoes</option>
+              <option value="beans" data-icon="images/sample-1.jpg" class="circle">Beans</option>
+              <option value="garlic" data-icon="images/office.jpg" class="circle">Garlic</option>
             </select>
           <label>Specific Ingredients</label>
         </div>
@@ -84,18 +85,30 @@
               </select>
             <label>Spirit</label>
           </div>
-            <a class="waves-effect waves-light btn"><i class="material-icons right">restaurant_menu</i>Lets Cook!</a>
+            <a class="waves-effect waves-light btn" id="searchFood"><i class="material-icons right">restaurant_menu</i>Lets Cook!</a>
         </div>
       </div>
     </div>
     <div class="col s9" id="mainContent">
       <div class="main">
         <h4 id="tempText">Waiting for your choices to inspire your meal</h4>
-        <div class="row">
-          <div class="col s6">
+        <div class="row" id="cardHolder">
+          <div class="col s7">
             <div class="card ">
               <div class="card-image">
                 <img src="assets/imgs/confit.jpeg">
+                <span class="card-title">Cassoulet with Duck Confit</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>here is some info we bring in from the api</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s5">
+            <div class="card ">
+              <div class="card-image">
+                <img src="assets/imgs/maja-petric-8287.jpg">
                 <span class="card-title">Cassoulet with Duck Confit</span>
                 <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
               </div>

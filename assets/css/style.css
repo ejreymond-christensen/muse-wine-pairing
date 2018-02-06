@@ -2,10 +2,16 @@ html{
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   color: #2C2C2C;
+}
+
+.appBackground{
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  color: #2C2C2C;
   position: relative;
 }
 
-html::after{
+.appBackground::after{
   content: "";
   background-image: url("../imgs/todd-quackenbush-700.jpg");
   background-repeat: no-repeat;
@@ -99,4 +105,14 @@ background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 
   z-index: 2;
   margin: auto;
   color: #fff;
+}
+.recipeImg{
+  max-height: 350px;
+  max-width: 500px;
+  width: auto;
+  height: auto;
+}
+.yummlyAttr{
+  font-size: 11px;
+  float: right;
 }
