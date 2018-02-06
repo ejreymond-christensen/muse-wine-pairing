@@ -1,8 +1,90 @@
-.parraHeader {
-  position: absolute;
-  opacity: .6;
+html{
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  background-image: url("../imgs/todd-quackenbush-700.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #2C2C2C;
+}
+
+.parallaxHeading {
+  font-family: 'Lobster', cursive;
+  opacity: .9;
   z-index: 2;
-  font-size: 40px;
+  font-size: 70px;
+  margin: 0 auto;
+}
+
+.sectionHeading{
   text-align: center;
-  vertical-align: middle;
+  font-family: 'Lobster', cursive;
+}
+.landingSection{
+  background-color: #2C2C2C;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.launchBtn{
+  float: right;
+}
+.page-footer{
+  padding-top: 0;
+  background-color: #2C2C2C;
+}
+.footerContent{
+  text-align: center;
+  margin: 1px auto;
+}
+
+
+/*App page Specific*/
+.noMargin{
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+#menuBar{
+  background-color: #F7F9F9;
+  -webkit-box-shadow: 1px 0px 3px 0px rgba(117,116,117,1);
+  -moz-box-shadow: 1px 0px 3px 0px rgba(117,116,117,1);
+  box-shadow: 1px 0px 3px 0px rgba(117,116,117,1);
+  min-height: 100vh;
+}
+.multiple-select-dropdown label {
+  top: -10px !important;
+}
+.brandTitle{
+  font-family: 'Lobster', cursive;
+}
+.brandName{
+  margin: 15px auto;
+  text-align: center;
+}
+.hrTitle{
+  border: 0;
+  height: 1px;
+  margin-bottom: 15px;
+background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.cursive{
+  font-family: 'Lobster', cursive;
+}
+#mainContent{
+  padding: 25px;
+}
+.main{
+  width: auto;
+  text-align: center;
+}
+
+#tempText{
+  font-family: 'Lobster', cursive;
+  opacity: .7;
+  z-index: 2;
+  margin: auto;
+  color: #fff;
 }
