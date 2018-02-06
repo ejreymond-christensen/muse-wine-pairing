@@ -16,7 +16,7 @@ function getRecipe(queryURL) {
 	});
 }
 function addRecipePreview(recipeData){
-  var randomNumber= Math.floor(Math.random() * 50);
+  var randomNumber= Math.floor(Math.random() * recipeData.matches.length);
 
   var imageURL = (recipeData.matches[randomNumber].smallImageUrls[0]).slice(0,-2)+"500-c";
 
@@ -28,6 +28,7 @@ function addRecipePreview(recipeData){
   imageSection.append('<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>');
   var textSection = $('<div class="card-content">');
   textSection.append('<p>here is some info we bring in from the api</p>');
+  textSection.append('<a class="waves-effect waves-light btn nextRecipe"><i class="material-icons right">restaurant_menu</i>Lets try something else!</a>');
   textSection.append('<span class= "yummlyAttr">'+recipeData.attribution.html+'</span>');
   cardContents.append(imageSection);
   cardContents.append(textSection);
@@ -47,15 +48,16 @@ $("#searchFood").on("click", function(){
    var cuisineAdd = "&allowedCuisine[]=cuisine^cuisine-" + cuisine[i];
    queryURL= queryURL+cuisineAdd;
    console.log(queryURL);
-
  }
-
   getRecipe(queryURL);
   console.log(queryURL);
 });
 
 
-
+$(document).on("click", ".nextRecipe", function(){
+  console.log("coucou");
+  addRecipePreview(recipeData);
+});
 
 
 function getCocktail() {
