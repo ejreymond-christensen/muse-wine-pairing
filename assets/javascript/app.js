@@ -65,13 +65,11 @@ function getCocktail() {
 	var queryURL = "http://addb.absolutdrinks.com/drinks/whiskey/?apiKey=bd21b634fcff4655b4d00cac83d4af20";
 	$.ajax({
 		"url": queryURL,
+    "dataType": "JSONP",
 		"method": "GET"
 	}).then(function(recipeData) {
 		console.log(recipeData);
-		console.log(recipeData.matches[0].imageUrlsBySize[90]);
-		var imageURL = recipeData.matches[0].smallImageUrls[0];
-		console.log(imageURL);
-		console.log(imageURL.slice(0,-2)+"500-c");
+
 
 	});
 }
@@ -85,6 +83,46 @@ function newRecipe() {
 		console.log(response);
 	});
 }
+
+function getWineList() {
+  var apiKey = "mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6";
+  //var wineSearch = ;
+
+  var queryURL = "http://api.snooth.com/wines/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&q=red+wines";
+  $.ajax({
+    "url": queryURL,
+    "dataType": "JSON",
+    "method": "GET"
+  }).then(function(wineList) {
+    console.log(wineList);
+
+
+  });
+}
+
+function getWine() {
+  var apiKey = "mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6";
+  //var wineId = ;
+
+  var queryURL = "http://api.snooth.com/wine/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&id=the-little-penguin-chardonnay-premier-2010&food=1";
+  $.ajax({
+    "url": queryURL,
+    "dataType": "JSON",
+    "method": "GET"
+  }).then(function(wineList) {
+    console.log(wineList);
+
+
+  });
+}
+
+getWineList();
+getWine();
+
+
+
 //newRecipe();
 //getRecipe();
-getCocktail();
+
+
+
