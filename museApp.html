@@ -93,27 +93,36 @@
               </select>
             <label>Spirit</label>
           </div>
-            <a class="waves-effect waves-light btn" id="searchFood"><i class="material-icons right">restaurant_menu</i>Lets Cook!</a>
+          <a class="waves-effect waves-light btn" id="searchFood"><i class="material-icons right">restaurant_menu</i>Lets Cook!</a>
         </div>
       </div>
     </div>
     <div class="col s9" id="mainContent">
       <div class="main">
         <h4 id="tempText">Waiting for your choices to inspire your meal</h4>
-        <div class="row" id="cardHolder">
-          <div class="col s7">
-            <div class="card ">
-              <div class="card-image">
-                <img src="assets/imgs/confit.jpeg">
-                <span class="card-title">Cassoulet with Duck Confit</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                <p>here is some info we bring in from the api</p>
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <a class="waves-effect waves-light btn modal-trigger modalStyle red circle" href="#modal1">Info </a>
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Hello Fine Diners!</h4>
+                  <h5>Lets get Started</h5>
+                  <p>This is a very fun and easy to use app that helps all of us when in doubt of our culinary expertise. By mixing and matching the perfect meal starting on your style of cuisine all the way down to ingredients , sides and much more. Then
+                    we take all your ideas and we move forward with our very unique and cautious drink pairing that will be a perfect complement for your meal and occasion.</p>
+                  <p>So, first things first choose a Style (this is fun) then move down the list of options. Not sure what to pick? Don't sweat it , we will find a great recommendation just for you. Next click on drink menu and we will do the magic for you
+                    and pair your meal with a great drink selection to go with it. Making you the star of the night while enjoying something unique and Delicious. hint: its ok to be creative ;) </p>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">I'm Ready</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col s5">
+        </div>
+        <!-- modal end! -->
+        <div class="row" id="cardHolder">
+          <!-- <div class="col s5">
             <div class="card ">
               <div class="card-image">
                 <img src="assets/imgs/maja-petric-8287.jpg">
@@ -130,11 +139,38 @@
                 </ul>
               </div>
             </div>
+          </div> -->
+          <div>
+            <a class="waves-effect waves-light btn modal-trigger modalStyle2 red " href="#modal2">feedback</a>
+            <div id="modal2" class="modal">
+              <div class="modal-content">
+                <h4>We want to hear from You!</h4>
+                <label for="textarea1">Tell us More</label>
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="icon_prefix">Name</label>
+                <input id="icon_prefix" type="text" class="validate">
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!--Recipe Modal-->
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <h4>Duck Confit</h4>
+      <p>Source/ Blahalaha</p>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
   <footer class="page-footer grey darken-3">
     <div class="footer-copyright grey darken-3">
       <div class="container">
