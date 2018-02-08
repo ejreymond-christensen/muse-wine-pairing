@@ -81,6 +81,12 @@ html{
 .brandName{
   margin: 15px auto;
   text-align: center;
+  text-decoration: none;
+  color: #2C2C2C;
+}
+.brandName:visited{
+  text-decoration: none;
+  color: #2C2C2C;
 }
 .hrTitle{
   border: 0;
