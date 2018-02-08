@@ -53,10 +53,12 @@ function addRecipePreview(recipeData){
 
 $("#searchFood").on("click", function(){
   var meat;
+  var allergies=$("#allergies").val();
   if ($("#meat").val() === null) {
     meat= "beef, chicken, pork, fish";
   }else{
     meat= $("#meat").val();}
+
 
   var cuisine= $("#cuisine").val();
   var ingredients= $("#ingredients").val().join("+");
@@ -67,34 +69,37 @@ $("#searchFood").on("click", function(){
    var cuisineAdd = "&allowedCuisine[]=cuisine^cuisine-" + cuisine[i];
    queryURL= queryURL+cuisineAdd;
    console.log(queryURL);
- }
+
+   }
+   for (var y = 0; y < allergies.length; y++) {
+     if(allergies[y] === "gluten"){
+       var glutenAdd = "&allowedAllergy[]=393^Gluten-Free";
+       queryURL= queryURL+glutenAdd;
+     }
+     if(allergies[y] === "lactose"){
+       var lactoseAdd = "&allowedAllergy[]=396^Dairy-Free";
+       queryURL= queryURL+lactoseAdd;
+     }
+     if(allergies[y] === "nuts"){
+       var nutsAdd = "&allowedAllergy[]=395^Tree+Nut-Free&allowedAllergy[]=394^Peanut-Free";
+       queryURL= queryURL+nutsAdd;
+     }
+     if(allergies[y] === "seafood"){
+       var seafoodAdd = "&allowedAllergy[]=398^Seafood-Free";
+       queryURL= queryURL+seafoodAdd;
+     }
+  }
+
+ //Hides the Background text after the search button is clicked.
   $("#tempText").addClass("hide", "display: none;");
   getRecipe(queryURL);
-  console.log(queryURL);
+  console.log("Query: "+queryURL);
 });
 
 
 $(document).on("click", ".nextRecipe", function(){
-  console.log("coucou");
   addRecipePreview(recipeData);
 });
-
-
-function getCocktail() {
-
-	var queryURL = "http://addb.absolutdrinks.com/drinks/whiskey/?apiKey=bd21b634fcff4655b4d00cac83d4af20";
-	$.ajax({
-		"url": queryURL,
-    "dataType": "JSONP",
-		"method": "GET"
-	}).then(function(recipeData) {
-		console.log(recipeData);
-
-
-	});
-}
-
-
 
 function newRecipe() {
 
