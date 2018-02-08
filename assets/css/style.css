@@ -10,11 +10,14 @@ body{
 
   display: flex;
   flex-direction: column;
+  min-height: 100%;
   margin: 0;
 }
 .appBackground{
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #2C2C2C;
   position: relative;
 }
@@ -107,6 +110,7 @@ body{
 #mainContent{
   padding: 25px;
   height: 100%;
+  min-height: 90vh;
 }
 .main{
   width: auto;
@@ -124,7 +128,7 @@ body{
 }
 /* Recipe preview cards */
 .recipeImg{
-  max-height: 294px;
+  max-height: 350px;
   max-width: 500px;
   width: auto;
   height: auto;
