@@ -109,7 +109,7 @@ background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 
 /* Recipe preview cards */
 .recipeImg{
   max-height: 350px;
-  max-width: 500px;
+  width: 500px;
   width: auto;
   height: auto;
 }
@@ -140,26 +140,30 @@ background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 
   right: 4px;
   opacity: .7;
 }
+.recipeSource{
+  font-size: 14px;
+}
 
 /* Modals */
 .modalStyle{
-  top:0;
-  right:0;
+  top:5px;
+  right:5px;
   position:absolute;
-  border-radius:400px;
+  border-radius:40px;
+  padding: 0 8px;
 }
 .modalStyle2{
   bottom:80px;
-  right:0;
+  right:5px;
   position:absolute;
   border-radius:60px;
+  padding: 0 8px;
 }
 .card-content{
   overflow-y: auto;
   flex-direction: column;
 }
 .card-reveal{
-    overflow-y: auto;
     text-align: left;
 }
 .recipeTitle{
@@ -167,4 +171,13 @@ background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 
 }
 .recipeSmall{
   font-size: 11px;
+}
+.mainReveal{
+  overflow-y: auto;
+}
+#cardAction{
+  padding: 16px 0 0 0
+}
+.sourceRecipeBtn{
+  text-align: right;
 }

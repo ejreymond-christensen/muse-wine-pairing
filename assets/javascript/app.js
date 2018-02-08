@@ -29,27 +29,35 @@ function addRecipePreview(recipeData){
   var imageURL = (recipeData.matches[randomNumber].smallImageUrls[0]).slice(0,-2)+"500-c";
   getRecipeId = recipeData.matches[randomNumber].id;
 
-  var mealCard= $('<div class="col s7">');
+  var mealCard= $('<div class="col s12 m7 l7">');
   var cardContents = $('<div class="card recipePreviewCard">');
   var imageSection = $('<div class="card-image waves-effect waves-block waves-light recipePreviewCardImg">');
   imageSection.append('<img class= "recipeImg activator" src="'+imageURL+'">');
   imageSection.append('<a class="btn-floating waves-effect waves-light nextRecipe black"><i class="material-icons">navigate_next</i></a>');
   var textSection = $('<div class="card-content">');
   textSection.append('<div class="card-title activator grey-text text-darken-4 recipeTitle">'+recipeData.matches[randomNumber].recipeName+'</div>');
+  textSection.append('<div class="grey-text text-darken-4 recipeSource">'+recipeData.matches[randomNumber].sourceDisplayName.toUpperCase()+'</div>');
   textSection.append('<div class= "yummlyAttr">'+recipeData.attribution.html+'</div>');
   var cardReveal = $('<div class="card-reveal">');
-  cardReveal.append('<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>'+recipeData.matches[randomNumber].recipeName+'</span>');
+  cardReveal.append('<div class="mainReveal">');
+  cardReveal.append('<div class="card-action right-align" id="cardAction">');
   cardContents.append(imageSection);
   cardContents.append(textSection);
   cardContents.append(cardReveal);
   mealCard.append(cardContents);
   $('#cardHolder').empty();
   $('#cardHolder').prepend(mealCard);
+  newRecipe();
 }
 
 
 $("#searchFood").on("click", function(){
-  var meat= $("#meat").val();
+  var meat;
+  if ($("#meat").val() === null) {
+    meat= "beef, chicken, pork, fish";
+  }else{
+    meat= $("#meat").val();}
+
   var cuisine= $("#cuisine").val();
   var ingredients= $("#ingredients").val().join("+");
   console.log("ingredients"+ $("#ingredients").val());
@@ -87,10 +95,6 @@ function getCocktail() {
 }
 
 
-$(document).on("click", ".recipePreviewCardImg" , function(){
-  console.log("hola");
-  newRecipe();
-});
 
 function newRecipe() {
 
@@ -99,19 +103,23 @@ function newRecipe() {
 		"url": queryURL,
 		"method": "GET"
 	}).then(function(response) {
-		fullRecipeData = response;
-    $(".card-reveal").append('<div><span class="strong recipeSmall left-align">Rating: '+response.rating+'</span><span class="strong right recipeSmall">Total Time: '+response.totalTime+'</span></div>');
-    $(".card-reveal").append('<div><span class="strong right recipeSmall">Servings: '+response.numberOfServings+'</span></div>');
-    $(".card-reveal").append('<div class="strong left-align">Ingredients</div>');
+    $(".mainReveal").empty();
+    $(".card-action").empty();
+    $(".mainReveal").append('<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>'+response.name+'</span>');
+    $(".mainReveal").append('<div><span class="strong recipeSmall left-align">Rating: '+response.rating+'</span><span class="strong right recipeSmall">Total Time: '+response.totalTime+'</span></div>');
+    $(".mainReveal").append('<div><span class="strong right recipeSmall">Servings: '+response.numberOfServings+'</span></div>');
+    $(".mainReveal").append('<div class="strong left-align">Ingredients</div>');
     var ingredientsList= $('<ul class="ingredientList left-align">');
     for (var i = 0; i < response.ingredientLines.length; i++) {
       ingredientsList.append("<li>"+response.ingredientLines[i]+"</li>");
     }
-    $(".card-reveal").append(ingredientsList);
+    $(".mainReveal").append(ingredientsList);
+    $(".card-action").append('<a class="waves-effect waves-light btn sourceRecipeBtn right-align" href="'+response.source.sourceRecipeUrl+'" target="_blank"><i class="material-icons right">restaurant_menu</i> Read Directions</a>');
+    console.log(queryURL);
 	});
 }
 
-<<<<<<< HEAD
+
 
 
 //  $(".cardReveal").append('<p><span class="strong">Source:</span> '+fullRecipeData.rating+'</p>');
@@ -126,7 +134,7 @@ function newRecipe() {
   // ingredientsList.append("<li>click recipe image to see full recipe...</li>");
   // textSection.append('<p class="strong" >Ingredients:</p>');
   // textSection.append(ingredientsList);
-=======
+
 function getWineList() {
   var apiKey = "mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6";
   //var wineSearch = ;
@@ -163,10 +171,5 @@ getWineList();
 getWine();
 
 
->>>>>>> 66f89b80eee01e02b3830698c1c6e2467b6cb9c3
-
 //newRecipe();
 //getRecipe();
-
-
-
