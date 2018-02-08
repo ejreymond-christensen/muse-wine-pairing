@@ -59,6 +59,7 @@ function addRecipePreview(recipeData){
 
 
 $("#searchFood").on("click", function(){
+  event.preventDefault();
   var meat;
   var allergies=$("#allergies").val();
   if ($("#meat").val() === null) {
