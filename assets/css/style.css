@@ -10,7 +10,6 @@ body{
 
   display: flex;
   flex-direction: column;
-  height: 100%;
   margin: 0;
 }
 .appBackground{
@@ -125,7 +124,7 @@ body{
 }
 /* Recipe preview cards */
 .recipeImg{
-  max-height: 250px;
+  max-height: 294px;
   max-width: 500px;
   width: auto;
   height: auto;

@@ -9,6 +9,12 @@ $(document).ready(function() {
   });
 });
 
+$('.button-collapse').sideNav({
+     menuWidth: 255, // Default is 300
+     draggable: true, // Choose whether you can drag to open on touch screens,
+   }
+ );
+
 var recipeData=[];
 var getRecipeId;
 
@@ -30,7 +36,7 @@ function addRecipePreview(recipeData){
   var imageURL = (recipeData.matches[randomNumber].smallImageUrls[0]).slice(0,-2)+"500-c";
   getRecipeId = recipeData.matches[randomNumber].id;
 
-  var mealCard= $('<div class="col s12 m4 l4 offset-m2 offset-l2">');
+  var mealCard= $('<div class="col s12 m4 l4 offset-m3 offset-l3">');
   var cardContents = $('<div class="card recipePreviewCard">');
   var imageSection = $('<div class="card-image waves-effect waves-block waves-light recipePreviewCardImg">');
   imageSection.append('<img class= "recipeImg activator" src="'+imageURL+'">');
