@@ -61,7 +61,7 @@ $("#searchFood").on("click", function(){
   var cuisine= $("#cuisine").val();
   var ingredients= $("#ingredients").val().join("+");
   console.log("ingredients"+ $("#ingredients").val());
-  var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf&q="+meat+"+"+ingredients+"&maxResult=50&requirePictures=true";
+  var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf&q="+meat+"+"+ingredients+"&maxResult=50&requirePictures=true";
 
   for (var i = 0; i < cuisine.length; i ++){
    var cuisineAdd = "&allowedCuisine[]=cuisine^cuisine-" + cuisine[i];
@@ -98,7 +98,7 @@ function getCocktail() {
 
 function newRecipe() {
 
-	var queryURL = "http://api.yummly.com/v1/api/recipe/"+getRecipeId+"?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf";
+	var queryURL = "https://api.yummly.com/v1/api/recipe/"+getRecipeId+"?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf";
 	$.ajax({
 		"url": queryURL,
 		"method": "GET"
