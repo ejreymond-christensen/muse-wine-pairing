@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('.parallax').parallax();
   $('select').material_select();
   $('.modal').modal();
+  $(".button-collapse").sideNav();
   $('#modal1').on('click', function() {
    });
   $('#modal2').on('click', function() {
@@ -29,7 +30,7 @@ function addRecipePreview(recipeData){
   var imageURL = (recipeData.matches[randomNumber].smallImageUrls[0]).slice(0,-2)+"500-c";
   getRecipeId = recipeData.matches[randomNumber].id;
 
-  var mealCard= $('<div class="col s12 m7 l7">');
+  var mealCard= $('<div class="col s12 m4 l4 offset-m2 offset-l2">');
   var cardContents = $('<div class="card recipePreviewCard">');
   var imageSection = $('<div class="card-image waves-effect waves-block waves-light recipePreviewCardImg">');
   imageSection.append('<img class= "recipeImg activator" src="'+imageURL+'">');
@@ -55,7 +56,7 @@ $("#searchFood").on("click", function(){
   var meat;
   var allergies=$("#allergies").val();
   if ($("#meat").val() === null) {
-    meat= "beef, chicken, pork, fish";
+    meat= "beef, lamb, pork";
   }else{
     meat= $("#meat").val();}
 
