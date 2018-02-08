@@ -40,7 +40,7 @@
         </div>
         <div multiple class="input-field col s12">
           <select class="icons" id="meat">
-              <option value="beef, chicken, pork, fish, seafood" disabled selected>Choose your meat</option>
+              <option value="null" disabled selected>Choose your meat</option>
               <option value="beef" data-icon="assets/imgs/beef.jpg" class="circle">Beef</option>
               <option value="chicken" data-icon="assets/imgs/chicken.jpg" class="circle">Chicken</option>
               <option value="duck" data-icon="assets/imgs/chicken.jpg" class="circle">Duck</option>
@@ -80,7 +80,19 @@
           <label>Allergies</label>
         </div>
         <div class="row">
+          <h5 class="cursive">Drinking</h5>
           <hr class="hrTitle">
+          <div class="input-field col s12">
+            <select multiple class="icons">
+                <option value="" disabled selected>Choose your spirit</option>
+                <option value="" data-icon="images/sample-1.jpg" class="circle">Bourbon</option>
+                <option value="" data-icon="images/office.jpg" class="circle">Gin</option>
+                <option value="" data-icon="images/yuna.jpg" class="circle">Rum</option>
+                <option value="" data-icon="images/sample-1.jpg" class="circle">Vodka</option>
+                <option value="" data-icon="images/sample-1.jpg" class="circle">Tequila</option>
+              </select>
+            <label>Spirit</label>
+          </div>
           <a class="waves-effect waves-light btn" id="searchFood"><i class="material-icons right">restaurant_menu</i>Lets Cook!</a>
         </div>
       </div>
@@ -89,8 +101,78 @@
       <div class="main">
         <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
         <h4 id="tempText">Waiting for your choices to inspire your meal</h4>
-          <a class="waves-effect waves-light btn modal-trigger modalStyle red circle" href="#modal1">Info </a>
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <a class="waves-effect waves-light btn modal-trigger modalStyle red circle" href="#modal1">Info </a>
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Hello Fine Diners!</h4>
+                  <h5>Lets get Started</h5>
+                  <p>This is a very fun and easy to use app that helps all of us when in doubt of our culinary expertise. By mixing and matching the perfect meal starting on your style of cuisine all the way down to ingredients , sides and much more. Then
+                    we take all your ideas and we move forward with our very unique and cautious drink pairing that will be a perfect complement for your meal and occasion.</p>
+                  <p>So, first things first choose a Style (this is fun) then move down the list of options. Not sure what to pick? Don't sweat it , we will find a great recommendation just for you. Next click on drink menu and we will do the magic for you
+                    and pair your meal with a great drink selection to go with it. Making you the star of the night while enjoying something unique and Delicious. hint: its ok to be creative ;) </p>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">I'm Ready</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal end! -->
         <div class="row" id="cardHolder">
+          <div class="col col s12 m4 l4 wineCard" hidden="true">
+            <div class="card">
+              <div class="card-content wineInfo">
+              </div>
+              <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab" id="tab1"><a class="active" href="#test1">Option 1</a></li>
+                  <li class="tab" id="tab2"><a href="#test2">Option 2</a></li>
+                  <li class="tab" id="tab3"><a href="#test3">Option 3</a></li>
+                </ul>
+              </div>
+              <div class="card-content grey darken-3 wineName" style="color: white; text-align: center">
+                <div id="test1">Test 1</div>
+                <div id="test2">Test 2</div>
+                <div id="test3">Test 3</div>
+              </div>
+            </div>
+            <!-- <div class="card ">
+              <div class="card-image">
+                <img src="assets/imgs/maja-petric-8287.jpg">
+                <span class="card-title">Cassoulet with Duck Confit</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>here is some info we bring in from the api</p>
+                <ul>
+                  <h6>Ingredients</h6>
+                  <li>5 tablespoons extra-virgin olive oil</li>
+                  <li>2 slices pancetta</li>
+                  <li>1 onions</li>
+                </ul>
+              </div>
+            </div> -->
+          </div>
+
+          <div>
+            <a class="waves-effect waves-light btn modal-trigger modalStyle2 red " href="#modal2">feedback</a>
+            <div id="modal2" class="modal">
+              <div class="modal-content">
+                <h4>We want to hear from You!</h4>
+                <label for="textarea1">Tell us More</label>
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="icon_prefix">Name</label>
+                <input id="icon_prefix" type="text" class="validate">
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+              </div>
+            </div>
+          </div>
         </div>
         <a class="waves-effect waves-light btn modal-trigger modalStyle2 red " href="#modal2">feedback</a>
       </div>
@@ -109,17 +191,15 @@
       </div>
     </div>
   </div>
-  <!--Modal Two-->
-  <div id="modal2" class="modal">
+  <!--Recipe Modal-->
+  <div id="recipeModal" class="modal">
     <div class="modal-content">
-      <h4>We want to hear from You!</h4>
-      <label for="textarea1">Tell us More</label>
-      <textarea id="textarea1" class="materialize-textarea"></textarea>
-      <label for="icon_prefix">Name</label>
-      <input id="icon_prefix" type="text" class="validate">
+      <h4>Duck Confit</h4>
+      <p>Source/ Blahalaha</p>
+
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
   <div class="push">

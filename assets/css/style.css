@@ -213,3 +213,25 @@ body{
 .push {
   height: 59px;
 }
+.wineImage {
+  width: 400px;
+  height: 400px;
+}
+.wineName {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+}
+.wineInfo {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+.tabs .tab a {
+  color: rgba(19, 18, 18, 0.7);
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: #3895c9;
+}
+.tabs .indicator {
+  background-color: #3895c9;
+}

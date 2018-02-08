@@ -17,6 +17,8 @@ $('.button-collapse').sideNav({
 
 var recipeData=[];
 var getRecipeId;
+var wineList=[];
+var meat;
 
 
 
@@ -36,7 +38,13 @@ function addRecipePreview(recipeData){
   var imageURL = (recipeData.matches[randomNumber].smallImageUrls[0]).slice(0,-2)+"500-c";
   getRecipeId = recipeData.matches[randomNumber].id;
 
+//<<<<<<< Updated upstream
   var mealCard= $('<div class="col s12 m5 l5 offset-m3 offset-l3">');
+//=======
+
+//   var mealCard= $('<div class="col s12 m4 l4 offset-m2 offset-l2">');
+
+// >>>>>>> Stashed changes
   var cardContents = $('<div class="card recipePreviewCard">');
   var imageSection = $('<div class="card-image waves-effect waves-block waves-light recipePreviewCardImg">');
   imageSection.append('<img class= "recipeImg activator" src="'+imageURL+'">');
@@ -52,15 +60,78 @@ function addRecipePreview(recipeData){
   cardContents.append(textSection);
   cardContents.append(cardReveal);
   mealCard.append(cardContents);
-  $('#cardHolder').empty();
+
+  
+
   $('#cardHolder').prepend(mealCard);
   newRecipe();
 }
 
+function showWineOptions() {
+
+  //generates random number so the same wines aren't shown every time
+  var randomNumber= Math.floor(Math.random() * wineList.wines.length);
+  var typeWine;
+  if (wineList.wines[randomNumber].type === "") {
+    typeWine = "Red Wine";
+  }
+  else {
+    typeWine = wineList.wines[randomNumber].type;
+  }
+  // generates wine info when you click option one
+  $(document).on('click', '#tab1', function() {
+    $('.wineInfo').empty();
+    $('.wineInfo').append('<p><u><b>Price</b></u>: '+wineList.wines[randomNumber].price+'</p>');
+    $('.wineInfo').append('<p><u><b>Year</b></u>: '+wineList.wines[randomNumber].vintage+'</p>');
+    $('.wineInfo').append('<p><u><b>Type</b></u>: '+typeWine+'</p>');
+    $('.wineInfo').append('<p><u><b>Winery</b></u>: '+wineList.wines[randomNumber].winery+'</p>');
+    $('.wineInfo').append('<p><u><b>varietal</b></u>: '+wineList.wines[randomNumber].varietal+'</p>');
+    $('.wineInfo').append('<p><u><b>Region</b></u>: '+wineList.wines[randomNumber].region+'</p>');
+  });
+  // generates wine info when you clikc option 2
+  $(document).on('click', '#tab2', function() {
+    $('.wineInfo').empty();
+    $('.wineInfo').append('<p><u><b>Price</b></u>: '+wineList.wines[randomNumber+1].price+'</p>');
+    $('.wineInfo').append('<p><u><b>Year</b></u>: '+wineList.wines[randomNumber+1].vintage+'</p>');
+    $('.wineInfo').append('<p><u><b>Type</b></u>: '+typeWine+'</p>');
+    $('.wineInfo').append('<p><u><b>Winery</b></u>: '+wineList.wines[randomNumber+1].winery+'</p>');
+    $('.wineInfo').append('<p><u><b>varietal</b></u>: '+wineList.wines[randomNumber+1].varietal+'</p>');
+    $('.wineInfo').append('<p><u><b>Region</b></u>: '+wineList.wines[randomNumber+1].region+'</p>');
+  });
+  // generates wine info when you click option 3
+  $(document).on('click', '#tab3', function() {
+    $('.wineInfo').empty();
+    $('.wineInfo').append('<p><u><b>Price</b></u>: '+wineList.wines[randomNumber+2].price+'</p>');
+    $('.wineInfo').append('<p><u><b>Year</b></u>: '+wineList.wines[randomNumber+2].vintage+'</p>');
+    $('.wineInfo').append('<p><u><b>Type</b></u>: '+typeWine+'</p>');
+    $('.wineInfo').append('<p><u><b>Winery</b></u>: '+wineList.wines[randomNumber+2].winery+'</p>');
+    $('.wineInfo').append('<p><u><b>varietal</b></u>: '+wineList.wines[randomNumber+2].varietal+'</p>');
+    $('.wineInfo').append('<p><u><b>Region</b></u>: '+wineList.wines[randomNumber+2].region+'</p>');
+  });
+
+  //initial wine info for option 1
+  $('.wineInfo').append('<p><u><b>Price</b></u>: '+wineList.wines[randomNumber].price+'</p>');
+  $('.wineInfo').append('<p><u><b>Year</b></u>: '+wineList.wines[randomNumber].vintage+'</p>');
+  $('.wineInfo').append('<p><u><b>Type</b></u>: '+typeWine+'</p>');
+  $('.wineInfo').append('<p><u><b>Winery</b></u>: '+wineList.wines[randomNumber].winery+'</p>');
+  $('.wineInfo').append('<p><u><b>varietal</b></u>: '+wineList.wines[randomNumber].varietal+'</p>');
+  $('.wineInfo').append('<p><u><b>Region</b></u>: '+wineList.wines[randomNumber].region+'</p>');
+  $('#test1').text(wineList.wines[randomNumber].name);
+  $('#test2').text(wineList.wines[randomNumber+1].name);
+  $('#test3').text(wineList.wines[randomNumber+2].name);
+
+
+  $('.wineCard').removeAttr('hidden');
+}
+
 
 $("#searchFood").on("click", function(){
-  var meat;
+
+  meat;
   var allergies=$("#allergies").val();
+
+  $('.wineInfo').empty();
+  $('.recipePreviewCard').remove();
   if ($("#meat").val() === null) {
     meat= "beef, lamb, pork";
   }else{
@@ -101,12 +172,19 @@ $("#searchFood").on("click", function(){
   $("#tempText").addClass("hide", "display: none;");
   getRecipe(queryURL);
   console.log("Query: "+queryURL);
+
+  getWineList();
+
 });
 
 
 $(document).on("click", ".nextRecipe", function(){
+//<<<<<<< Updated upstream
+  $('.recipePreviewCard').remove();
   addRecipePreview(recipeData);
+  
 });
+
 
 function newRecipe() {
 
@@ -148,40 +226,32 @@ function newRecipe() {
   // textSection.append(ingredientsList);
 
 function getWineList() {
+  console.log(meat);
+  var wineType = "";
+  if (meat === "beef" || meat === "pork" || meat === "lamb" || meat === "duck") {
+    wineType = "red";
+  }
+  else {
+    wineType = "white"
+  }
+  console.log(wineType);
+
   var apiKey = "mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6";
   //var wineSearch = ;
 
-  var queryURL = "http://api.snooth.com/wines/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&q=red+wines";
+  var queryURL = "http://api.snooth.com/wines/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&q="+wineType+"+wine&n=50&xp=30&c=US";
+  console.log(queryURL);
   $.ajax({
     "url": queryURL,
     "dataType": "JSON",
     "method": "GET"
-  }).then(function(wineList) {
-    console.log(wineList);
+  }).then(function(wineData) {
+    console.log(wineData);
+    wineList = wineData;
+    showWineOptions();
 
 
   });
 }
 
-function getWine() {
-  var apiKey = "mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6";
-  //var wineId = ;
 
-  var queryURL = "http://api.snooth.com/wine/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&id=the-little-penguin-chardonnay-premier-2010&food=1";
-  $.ajax({
-    "url": queryURL,
-    "dataType": "JSON",
-    "method": "GET"
-  }).then(function(wineList) {
-    console.log(wineList);
-
-
-  });
-}
-
-getWineList();
-getWine();
-
-
-//newRecipe();
-//getRecipe();
