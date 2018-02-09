@@ -1,3 +1,4 @@
+/* *****Global HTML-Body styles***** */
 html{
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
@@ -6,36 +7,14 @@ html{
   height: 100%;
   margin: 0;
   background-image: url("../imgs/todd-quackenbush-700.jpg");
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  /* position: relative; */
 }
+
 body{
   height: 100%;
   margin: 0;
 }
-/* .appBackground{
-  font-family: 'Lato', sans-serif;
-  box-sizing: border-box;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #2C2C2C;
-  position: relative;
-} */
 
-/* html::after{
-  content: "";
-  background-image: url("../imgs/todd-quackenbush-700.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: .8;
-  position: absolute;
-  top: 0;
-height: 100%;
-width: 100%;
-  z-index: -1;
-} */
-
+/* *****Landing Page Styles***** */
 .parallaxHeading {
   font-family: 'Lobster', cursive;
   opacity: .9;
@@ -48,6 +27,7 @@ width: 100%;
   text-align: center;
   font-family: 'Lobster', cursive;
 }
+
 .landingSection{
   background-color: #2C2C2C;
 }
@@ -59,66 +39,79 @@ width: 100%;
 .launchBtn{
   float: right;
 }
-.page-footer{
-  padding-top: 0;
-  background-color: #2C2C2C;
-}
-.footerContent{
-  text-align: center;
-  margin: 1px auto;
-  font-size: 12px;
-}
 
-/*App page Specific*/
+
+/* *****App Page Styles***** */
 .noMargin{
   margin: 0;
   display: flex;
   align-items: stretch;
-  /* height: 100%; */
 }
+
+.cursive{
+  font-family: 'Lobster', cursive;
+}
+
+/* MenuBar Style */
 #menuBar{
   background-color: #F7F9F9;
   -webkit-box-shadow: 1px 0px 3px 0px rgba(117,116,117,1);
   -moz-box-shadow: 1px 0px 3px 0px rgba(117,116,117,1);
   box-shadow: 1px 0px 3px 0px rgba(117,116,117,1);
 }
+
 .multiple-select-dropdown label {
   top: -10px !important;
 }
+
 .brandTitle{
   font-family: 'Lobster', cursive;
 }
+
 .brandName{
   margin: 15px auto;
   text-align: center;
   text-decoration: none;
   color: #2C2C2C;
 }
+
 .brandName:visited{
   text-decoration: none;
   color: #2C2C2C;
 }
+
 .hrTitle{
   border: 0;
   height: 1px;
   margin-bottom: 15px;
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-.cursive{
-  font-family: 'Lobster', cursive;
+
+#slide-out{
+  padding: 2px;
 }
+
+#searchFood{
+  float:right;
+  margin-right: 20px;
+  margin-bottom: 60px;
+}
+
+.subtitle{
+  margin-left: 7px;
+}
+
+/* Main Content for app */
 #mainContent{
   padding: 25px;
-  /* height: 100%;
-  min-height: 100%; */
 }
+
 .main{
   width: auto;
   text-align: center;
-  /* flex: 1 0 auto; */
-  /* height: 100%*/
 }
-/* Temporary Background Text */
+
+/* Temporary Background Text on App */
 #tempText{
   font-family: 'Lobster', cursive;
   opacity: .7;
@@ -126,66 +119,62 @@ width: 100%;
   color: #fff;
   margin-top: 100px;
 }
+
+.hamburger{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 32px;
+}
 /* Recipe preview cards */
+/* Images */
 .recipeImg{
   max-height: 350px;
   max-width: 500px;
   width: auto;
   height: auto;
 }
+
+.recipePreviewCardImg{
+  height: 350px;
+}
+
+/* Card Text */
 .card-title{
   font-family: 'Lobster', cursive;
 }
+
 .strong{
   font-weight: 700;
   font-size: 16px;
 }
+
 .yummlyAttr{
   font-size: 11px;
   float: right;
   display: block;
 }
+
 .card-content{
   text-align: left;
 }
-.recipePreviewCardImg{
-  max-height: 350px;
-}
+
 .previewList{
   margin-top: 0;
 }
+
 .nextRecipe{
   position: absolute;
   top: 50%;
   right: 4px;
   opacity: .7;
 }
+
 .recipeSource{
   font-size: 14px;
 }
 
-/* Modals */
-.modalStyle{
-  top:5px;
-  right:5px;
-  position:absolute;
-  border-radius:40px;
-  padding: 0 8px;
-}
-.modalStyle2{
-  bottom:80px;
-  right:5px;
-  position:absolute;
-  border-radius:60px;
-  padding: 0 8px;
-}
-.modalStyle6{
-  top: 50px;
-  right:5px;
-  position:absolute;
-  border-radius:60px;
-  padding: 0 8px;
-}
 .card-content{
   overflow-y: auto;
   flex-direction: column;
@@ -213,65 +202,64 @@ width: 100%;
   float: left;
 }
 
-/* STICKY FOOTER */
-.wrapper {
-  min-height: 90.25%;}
-  /*Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -59px;
-}
-.footer,
-.push {
-  height: 59px;
-}
-.footer{
-  position: sticky;
-  z-index: 999;
-}
+/* Wine Styles */
+
 .wineImage {
   width: 400px;
   height: 400px;
 }
+
 .wineName {
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 24px;
 }
+
 .wineInfo {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   min-height: 280px;
 }
+
 .tabs .tab a {
   color: rgba(19, 18, 18, 0.7);
 }
+
 .tabs .tab a:hover, .tabs .tab a.active {
   color: #3895c9;
 }
+
 .tabs .indicator {
   background-color: #3895c9;
 }
-#slide-out{
-  padding: 2px;
+
+/* *****Modals Styles***** */
+.modalStyle{
+  top:5px;
+  right:5px;
+  position:absolute;
+  border-radius:40px;
+  padding: 0 8px;
 }
-#searchFood{
-  float:right;
-  margin-right: 20px;
-  margin-bottom: 60px;
-}
-.subtitle{
-  margin-left: 7px;
-}
-.hamburger{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: white;
-  font-size: 32px;
+
+.modalStyle2{
+  bottom:80px;
+  right:5px;
+  position:absolute;
+  border-radius:60px;
+  padding: 0 8px;
 }
 
 #modal5{
   max-width: 400px;
+}
+
+.modalStyle6{
+  top: 50px;
+  right:5px;
+  position:absolute;
+  border-radius:60px;
+  padding: 0 8px;
 }
 
 .modalPadding {
@@ -280,6 +268,7 @@ width: 100%;
   border-radius:40px;
 }
 
+/* tooltip/snack */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -318,10 +307,36 @@ width: 100%;
     opacity: 1;
 }
 
+/* *****Footer Section***** */
+/* STICKY FOOTER */
+.wrapper {
+  min-height: 90.25%;}
+  /*Equal to height of footer, but also accounting for potential margin-bottom of last child */
+  margin-bottom: -59px;
+}
+.footer,
+.push {
+  height: 59px;
+}
+.footer{
+  position: sticky;
+  z-index: 999;
+}
+
+.page-footer{
+  padding-top: 0;
+  background-color: #2C2C2C;
+}
+
+.footerContent{
+  text-align: center;
+  margin: 1px auto;
+  font-size: 12px;
+}
+
+/* Media Queries */
 @media only screen and (max-width:500px){
   .miniButton{
     margin-right: 5px !important;
   }
 }
-
-
