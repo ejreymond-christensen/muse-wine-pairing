@@ -33,6 +33,7 @@ function getRecipe(queryURL) {
 	});
 }
 function addRecipePreview(recipeData){
+  $('.foodCard').empty();
   var randomNumber= Math.floor(Math.random() * recipeData.matches.length);
 
   var imageURL = (recipeData.matches[randomNumber].smallImageUrls[0]).slice(0,-2)+"500-c";
@@ -54,11 +55,7 @@ function addRecipePreview(recipeData){
   cardContents.append(imageSection);
   cardContents.append(textSection);
   cardContents.append(cardReveal);
-  mealCard.append(cardContents);
-
-
-
-  $('#cardHolder').prepend(mealCard);
+  $(".foodCard").prepend(cardContents);
   newRecipe();
 }
 
@@ -127,7 +124,7 @@ $("#searchFood").on("click", function(){
   $('.wineInfo').empty();
   $('.recipePreviewCard').remove();
   if ($("#meat").val() === null) {
-    meat= "beef, lamb, pork";
+    meat= "beef+pork";
   }else{
     meat= $("#meat").val();}
 
@@ -208,7 +205,7 @@ function newRecipe() {
 function getWineList() {
   console.log(meat);
   var wineType = "";
-  if (meat === "beef" || meat === "pork" || meat === "lamb" || meat === "duck") {
+  if (meat === "beef" || meat === "pork" || meat === "lamb" || meat === "duck" || meat ==="beef+pork") {
     wineType = "red";
   }
   else {

@@ -13,14 +13,14 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <ul id="slide-out" class="side-nav fixed" style="z-index: 998;">
+  <main class="wrapper">
+    <ul id="slide-out" class="side-nav fixed">
       <div class="brandTitle">
         <a href="index.html"><h4 class="brandName">Muse of Meals</h4></a>
       </div>
       <hr class="hrTitle">
       <div class="row">
-        <h5 class="cursive">Cooking</h5>
+        <h5 class="cursive subtitle">Cooking</h5>
         <hr class="hrTitle">
         <div class="input-field col s12">
           <select multiple class="icons" id="cuisine">
@@ -87,12 +87,13 @@
     </ul>
     <div class="col s12 m12 l12" id="mainContent">
       <div class="main">
-        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large hamburger"><i class="material-icons">menu</i></a>
         <h4 id="tempText">Waiting for your choices to inspire your meal</h4>
         <a class="waves-effect waves-light btn modal-trigger modalStyle red circle" href="#modal1">Info </a>
-        <!-- modal end! -->
         <div class="row" id="cardHolder">
-          <div class="col col s12 m4 l4 wineCard" hidden="true">
+          <div class="col s12 m5 l5 offset-m1 offset-l3 foodCard">
+          </div>
+          <div class="col s12 m5 l4 wineCard" hidden="true">
             <div class="card">
               <div class="card-content wineInfo">
               </div>
@@ -143,10 +144,8 @@
     </div>
     <!--Push for Sticky Footer-->
     <div class="push">
-
     </div>
-  </div>
-
+  </main>
   <footer class="footer page-footer grey darken-3">
     <div class="footer-copyright grey darken-3">
       <div class="container">

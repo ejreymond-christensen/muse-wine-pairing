@@ -2,27 +2,28 @@ html{
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   color: #2C2C2C;
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 100%;
+  margin: 0;
+  background-image: url("../imgs/todd-quackenbush-700.jpg");
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+}
+body{
   height: 100%;
   margin: 0;
 }
-body{
-
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  margin: 0;
-}
-.appBackground{
+/* .appBackground{
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-size: cover;
   color: #2C2C2C;
   position: relative;
-}
+} */
 
-.appBackground::after{
+/* html::after{
   content: "";
   background-image: url("../imgs/todd-quackenbush-700.jpg");
   background-repeat: no-repeat;
@@ -30,11 +31,10 @@ body{
   opacity: .8;
   position: absolute;
   top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+height: 100%;
+width: 100%;
   z-index: -1;
-}
+} */
 
 .parallaxHeading {
   font-family: 'Lobster', cursive;
@@ -74,7 +74,7 @@ body{
   margin: 0;
   display: flex;
   align-items: stretch;
-  height: 100%;
+  /* height: 100%; */
 }
 #menuBar{
   background-color: #F7F9F9;
@@ -109,22 +109,22 @@ body{
 }
 #mainContent{
   padding: 25px;
-  height: 100%;
-  min-height: 90vh;
+  /* height: 100%;
+  min-height: 100%; */
 }
 .main{
   width: auto;
   text-align: center;
-  flex: 1 0 auto;
-  /* height: 100%; */
+  /* flex: 1 0 auto; */
+  /* height: 100%*/
 }
 /* Temporary Background Text */
 #tempText{
   font-family: 'Lobster', cursive;
   opacity: .7;
   z-index: 2;
-
   color: #fff;
+  margin-top: 100px;
 }
 /* Recipe preview cards */
 .recipeImg{
@@ -204,14 +204,18 @@ body{
 
 /* STICKY FOOTER */
 .wrapper {
-  min-height: 100%;
-  /* Equal to height of footer */
+  min-height: 90.25%;}
+  /*Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -59px;
 }
 .footer,
 .push {
   height: 59px;
+}
+.footer{
+  position: sticky;
+  z-index: 999;
 }
 .wineImage {
   width: 400px;
@@ -234,4 +238,22 @@ body{
 }
 .tabs .indicator {
   background-color: #3895c9;
+}
+#slide-out{
+  padding: 2px;
+}
+#searchFood{
+  float:right;
+  margin-right: 20px;
+  margin-bottom: 60px;
+}
+.subtitle{
+  margin-left: 7px;
+}
+.hamburger{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 32px;
 }
