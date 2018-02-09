@@ -7,6 +7,12 @@ $(document).ready(function() {
    });
   $('#modal2').on('click', function() {
   });
+  $('#modal3').on('click', function() {
+   });
+  $('#modal4').on('click', function() {
+  });
+  $('#modal5').on('click', function() {
+  });
 });
 
 $('.button-collapse').sideNav({
@@ -117,27 +123,15 @@ function showWineOptions() {
 
 $("#searchFood").on("click", function(){
   event.preventDefault();
-  var allergies=$("#allergies").val();
 
   $('.wineInfo').empty();
   $('.recipePreviewCard').remove();
-  if ($("#meat").val() === null) {
-    meat= "beef+pork";
-  }else{
-    meat= $("#meat").val();}
-
-
+  var allergies=$("#allergies").val();
   var cuisine= $("#cuisine").val();
   var ingredients= $("#ingredients").val().join("+");
-  console.log("ingredients"+ $("#ingredients").val());
   var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf&q="+meat+"+"+ingredients+"&maxResult=50&requirePictures=true";
 
-  for (var i = 0; i < cuisine.length; i ++){
-   var cuisineAdd = "&allowedCuisine[]=cuisine^cuisine-" + cuisine[i];
-   queryURL= queryURL+cuisineAdd;
-   console.log(queryURL);
 
-   }
    for (var y = 0; y < allergies.length; y++) {
      if(allergies[y] === "gluten"){
        var glutenAdd = "&allowedAllergy[]=393^Gluten-Free";
@@ -157,15 +151,29 @@ $("#searchFood").on("click", function(){
      }
   }
 
- //Hides the Background text after the search button is clicked.
-  $("#tempText").addClass("hide", "display: none;");
-  getRecipe(queryURL);
-  console.log("Query: "+queryURL);
+  if ($("#meat").val() === null) {
+    validation();
+  }else{
+    meat= $("#meat").val();}
 
-  getWineList();
+  for (var i = 0; i < cuisine.length; i ++){
+    var cuisineAdd = "&allowedCuisine[]=cuisine^cuisine-" + cuisine[i];
+    queryURL= queryURL+cuisineAdd;
+    console.log(queryURL);
+   }
+
+   //Hides the Background text after the search button is clicked.
+    $("#tempText").addClass("hide", "display: none;");
+    getRecipe(queryURL);
+    console.log("Query: "+queryURL);
+
+    getWineList();
 
 });
 
+var validation = function(){
+  $('#modal5').modal('open');
+};
 
 $(document).on("click", ".nextRecipe", function(){
 //<<<<<<< Updated upstream

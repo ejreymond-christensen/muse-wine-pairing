@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 </head>
 
 <body>
@@ -89,7 +90,6 @@
       <div class="main">
         <a href="#" data-activates="slide-out" class="button-collapse show-on-large hamburger"><i class="material-icons">menu</i></a>
         <h4 id="tempText">Waiting for your choices to inspire your meal</h4>
-        <a class="waves-effect waves-light btn modal-trigger modalStyle red circle" href="#modal1">Info </a>
         <div class="row" id="cardHolder">
           <div class="col s12 m5 l4 offset-m1 offset-l3 foodCard">
           </div>
@@ -112,10 +112,46 @@
             </div>
           </div>
         </div>
-        <a class="waves-effect waves-light btn modal-trigger modalStyle2 red " href="#modal2">feedback</a>
       </div>
     </div>
-    <!--Modal One-->
+    <!--Button Modal  -->
+    <div class="fixed-action-btn horizontal click-to-toggle modalStyle">
+    <a class="btn-floating btn-large red ">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <li  href="#modal4" class="waves-effect waves-light btn modal-trigger  red modalPadding">My Recipes</li>
+      <li  href="#modal3" class="waves-effect waves-light btn modal-trigger  red modalPadding">Sign In</li>
+       <li  class="waves-effect waves-light btn modal-trigger  red modalPadding" href="#modal1">Info</li>
+      <li class="waves-effect waves-light btn modal-trigger  red modalPadding" href="#modal2">feedback</li>
+
+
+
+    </ul>
+  </div>
+  <!--Sign in Modal  -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Create an Account</h4>
+      <label for="icon_prefix">Name</label>
+      <input id="icon_prefix" type="text" class="validate">
+
+      <div class="input-field col s12">
+        <input id="txtEmail" type="email" placeholder="Email" class="validate">
+       <!--  <label for="email">Email</label> -->
+      </div>
+      <div class="input-field col s12">
+        <input id="txtPassword" type="password"  placeholder= "Password" class="validate">
+       <!--  <label for="password">Password</label> -->
+      </div>
+      <div class="modal-footer">
+        <button href="#!" id="btnLogin" class="modal-action modal-close waves-effect waves-green btn-flat btn btn action">Login</button>
+        <button href="#!" id="btnSignUp" class="modal-action modal-close waves-effect waves-green btn-flat btn btn secondary">Sign Up</button>
+        <button href="#!" id="btnLogOut" class="modal-action modal-close waves-effect waves-green btn-flat btn btn hide">Log Out</button>
+      </div>
+    </div>
+  </div>
+    <!-- Info Modal-->
     <div id="modal1" class="modal">
       <div class="modal-content">
         <h4>Hello Fine Diners!</h4>
@@ -129,17 +165,27 @@
         </div>
       </div>
     </div>
-    <!--Modal 2  -->
+    <!-- Feedback Modal  -->
     <div id="modal2" class="modal">
       <div class="modal-content">
         <h4>We want to hear from You!</h4>
         <label for="textarea1">Tell us More</label>
         <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <label for="icon_prefix">Name</label>
-        <input id="icon_prefix" type="text" class="validate">
+        <label for="feedbackName">Name</label>
+        <input id="feedbackName" type="text" class="validate">
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+        <a href="#!" id="text1" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </div>
+    <!-- Validation Modal -->
+    <div id="modal5" class="modal">
+      <div class="modal-content">
+        <h4>Opppps!</h4>
+        <p>We need more information from you, please select a protein!</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
     <!--Push for Sticky Footer-->
@@ -157,6 +203,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/firebase.js"></script>
 </body>
 
 </html>
