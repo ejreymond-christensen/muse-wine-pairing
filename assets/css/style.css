@@ -229,6 +229,7 @@ width: 100%;
 .wineInfo {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+  min-height: 280px;
 }
 .tabs .tab a {
   color: rgba(19, 18, 18, 0.7);
