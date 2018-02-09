@@ -208,6 +208,10 @@ width: 100%;
 .sourceRecipeBtn{
   text-align: right;
 }
+.saveRecipeBtn {
+  margin-left: 5px;
+  float: left;
+}
 
 /* STICKY FOOTER */
 .wrapper {
@@ -276,8 +280,48 @@ width: 100%;
   border-radius:40px;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -80%;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 @media only screen and (max-width:500px){
   .miniButton{
     margin-right: 5px !important;
   }
 }
+
+
