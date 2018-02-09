@@ -116,42 +116,17 @@
     </div>
     <!--Button Modal  -->
     <div class="fixed-action-btn horizontal click-to-toggle modalStyle">
-    <a class="btn-floating btn-large red ">
+      <a class="btn-floating btn-large red ">
       <i class="large material-icons">menu</i>
     </a>
-    <ul>
-      <li  href="#modal6" class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton">My Recipes</li>
-      <li  href="#modal3" class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton">Sign In</li>
-       <li  class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton" href="#modal1">Info</li>
-      <li class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton" href="#modal2">feedback</li>
-
-
-
-    </ul>
-  </div>
-  <!--Sign in Modal  -->
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <h4>Create an Account</h4>
-      <label for="icon_prefix">Name</label>
-      <input id="icon_prefix" type="text" class="validate">
-
-      <div class="input-field col s12">
-        <input id="txtEmail" type="email" placeholder="Email" class="validate">
-       <!--  <label for="email">Email</label> -->
-      </div>
-      <div class="input-field col s12">
-        <input id="txtPassword" type="password"  placeholder= "Password" class="validate">
-       <!--  <label for="password">Password</label> -->
-      </div>
-      <div class="modal-footer">
-        <button href="#!" id="btnLogin" class="modal-action modal-close waves-effect waves-green btn-flat btn btn action">Login</button>
-        <button href="#!" id="btnSignUp" class="modal-action modal-close waves-effect waves-green btn-flat btn btn secondary">Sign Up</button>
-        <button href="#!" id="btnLogOut" class="modal-action modal-close waves-effect waves-green btn-flat btn btn hide">Log Out</button>
-      </div>
+      <ul>
+        <li href="#modal6" class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton">My Recipes</li>
+        <li href="#modal3" class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton">Sign In</li>
+        <li href="#modal1" class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton">Info</li>
+        <li href="#modal2" class="waves-effect waves-light btn modal-trigger  red modalPadding miniButton">feedback</li>
+      </ul>
     </div>
-  </div>
-    <!-- Info Modal-->
+    <!-- Modal1 - Info Modal-->
     <div id="modal1" class="modal">
       <div class="modal-content">
         <h4>Hello Fine Diners!</h4>
@@ -165,7 +140,7 @@
         </div>
       </div>
     </div>
-    <!-- Feedback Modal  -->
+    <!-- Modal2 - Feedback Modal  -->
     <div id="modal2" class="modal">
       <div class="modal-content">
         <h4>We want to hear from You!</h4>
@@ -178,7 +153,39 @@
         <a href="#!" id="text1" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
       </div>
     </div>
-    <!-- Validation Modal -->
+    <!-- Modal3 - Sign in -->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Create an Account</h4>
+        <label for="icon_prefix">Name</label>
+        <input id="icon_prefix" type="text" class="validate">
+
+        <div class="input-field col s12">
+          <input id="txtEmail" type="email" placeholder="Email" class="validate">
+          <!--  <label for="email">Email</label> -->
+        </div>
+        <div class="input-field col s12">
+          <input id="txtPassword" type="password" placeholder="Password" class="validate">
+          <!--  <label for="password">Password</label> -->
+        </div>
+        <div class="modal-footer">
+          <button href="#!" id="btnLogin" class="modal-action modal-close waves-effect waves-green btn-flat btn btn action">Login</button>
+          <button href="#!" id="btnSignUp" class="modal-action modal-close waves-effect waves-green btn-flat btn btn secondary">Sign Up</button>
+          <button href="#!" id="btnLogOut" class="modal-action modal-close waves-effect waves-green btn-flat btn btn hide">Log Out</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal4 - Ajax Error -->
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4>Opppps!</h4>
+        <p id="errorMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+    </div>
+    <!-- Modal5 - Validation Modal -->
     <div id="modal5" class="modal">
       <div class="modal-content">
         <h4>Opppps!</h4>
@@ -188,45 +195,42 @@
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
-    <!-- Modal Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger modalStyle6 red" href="#modal6">Modal</a> -->
-
-  <!-- Modal Structure -->
-  <div id="modal6" class="modal bottom-sheet">
-    <div class="modal-content row">
-      <div class="col s6">
-        <h4>Saved Recipes</h4>
-        <table class="savedRecipes">
-          <tr>
-            <td>Saved Recipe 1</td>
-          </tr>
-          <tr>
-            <td>Saved Recipe 2</td>
-          </tr>
-          <tr>
-            <td>Saved Recipe 3</td>
-          </tr>
-        </table>
+    <!-- Modal6 - Recipe Box -->
+    <div id="modal6" class="modal bottom-sheet">
+      <div class="modal-content row">
+        <div class="col s6">
+          <h4>Saved Recipes</h4>
+          <table class="savedRecipes">
+            <tr>
+              <td>Saved Recipe 1</td>
+            </tr>
+            <tr>
+              <td>Saved Recipe 2</td>
+            </tr>
+            <tr>
+              <td>Saved Recipe 3</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col s6">
+          <h4>Saved Recipes</h4>
+          <table class="savedWines">
+            <tr>
+              <td>Saved Recipe 1</td>
+            </tr>
+            <tr>
+              <td>Saved Recipe 2</td>
+            </tr>
+            <tr>
+              <td>Saved Recipe 3</td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div class="col s6">
-        <h4>Saved Recipes</h4>
-        <table class="savedWines">
-          <tr>
-            <td>Saved Recipe 1</td>
-          </tr>
-          <tr>
-            <td>Saved Recipe 2</td>
-          </tr>
-          <tr>
-            <td>Saved Recipe 3</td>
-          </tr>
-        </table>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Done</a>
       </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
-  </div>
     <!--Push for Sticky Footer-->
     <div class="push">
     </div>
