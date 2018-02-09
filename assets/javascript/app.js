@@ -25,6 +25,8 @@ var recipeData=[];
 var getRecipeId;
 var wineList=[];
 var meat;
+var savedRecipes = ["Chicken Shawarma", "Chick Fil A", "Beef Bugolgi", "Scrambled Eggs"];
+var savedWines = ["Slow Press", "Darkhorse", "Casillero del diablo", "barefoot"];
 
 
 
@@ -120,17 +122,58 @@ function showWineOptions() {
   $('.wineCard').removeAttr('hidden');
 }
 
+$(".modalStyle6").on("click", function() {
+  showSavedRecipes();
+  showSavedWines();
+});
+
+
+function showSavedRecipes() {
+  $(".savedRecipes").empty();
+  for (var i = 0; i < savedRecipes.length; i++) {
+    $(".savedRecipes").append("<tr><td>"+savedRecipes[i]+"</td></tr>");
+  }
+}
+function showSavedWines() {
+  $(".savedWines").empty();
+  for (var i = 0; i < savedWines.length; i++) {
+    $(".savedWines").append("<tr><td>"+savedWines[i]+"</td></tr>");
+  }
+}
+
 
 $("#searchFood").on("click", function(){
   event.preventDefault();
 
   $('.wineInfo').empty();
   $('.recipePreviewCard').remove();
+// <<<<<<< Updated upstream
   var allergies=$("#allergies").val();
   var cuisine= $("#cuisine").val();
   var ingredients= $("#ingredients").val().join("+");
   var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf&q="+meat+"+"+ingredients+"&maxResult=50&requirePictures=true";
 
+// =======
+//   if ($("#meat").val() === null) {
+// //<<<<<<< Updated upstream
+//     meat= "beef+pork";
+// // =======
+// //     meat= "beef+lamb+pork";
+// // >>>>>>> Stashed changes
+//   }else{
+//     meat= $("#meat").val();}
+
+
+//   var cuisine= $("#cuisine").val();
+//   var ingredients= $("#ingredients").val().join("+");
+//   console.log("ingredients"+ $("#ingredients").val());
+//   var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf&q="+meat+"&"+ingredients+"&maxResult=50&requirePictures=true";
+
+//   for (var i = 0; i < cuisine.length; i ++){
+//    var cuisineAdd = "&allowedCuisine[]=cuisine^cuisine-" + cuisine[i];
+//    queryURL= queryURL+cuisineAdd;
+//    console.log("hi "+queryURL);
+// >>>>>>> Stashed changes
 
    for (var y = 0; y < allergies.length; y++) {
      if(allergies[y] === "gluten"){
