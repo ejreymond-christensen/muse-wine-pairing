@@ -159,6 +159,7 @@ $(document).ready(function() {
     // generates wine info when you click option one
     $(document).on('click', '#tab1', function() {
       $('.wineInfo').empty();
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -166,9 +167,10 @@ $(document).ready(function() {
       $('.wineInfo').append('<p><u><b>varietal</b></u>: ' + wineList.wines[randomNumber].varietal + '</p>');
       $('.wineInfo').append('<p><u><b>Region</b></u>: ' + wineList.wines[randomNumber].region + '</p>');
     });
-    // generates wine info when you clikc option 2
+    // generates wine info when you click option 2
     $(document).on('click', '#tab2', function() {
       $('.wineInfo').empty();
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber + 1].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber + 1].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -179,6 +181,7 @@ $(document).ready(function() {
     // generates wine info when you click option 3
     $(document).on('click', '#tab3', function() {
       $('.wineInfo').empty();
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber + 2].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber + 2].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -188,6 +191,7 @@ $(document).ready(function() {
     });
 
     //initial wine info for option 1
+    $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
     $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber].price + '</p>');
     $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber].vintage + '</p>');
     $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
