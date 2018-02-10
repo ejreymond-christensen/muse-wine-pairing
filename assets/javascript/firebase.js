@@ -66,6 +66,8 @@ $('#btnSignUp').on('click', e => {
 //Eventlistener logout
 $('#btnLogOut').on('click', e => {
   firebase.auth().signOut();
+  $(".savedWines").empty();
+  $(".savedRecipes").empty();
 });
 
 //Firebase authentication

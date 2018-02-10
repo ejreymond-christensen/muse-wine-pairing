@@ -9,7 +9,7 @@ $(document).ready(function() {
   $('.modal').modal();
   $(".button-collapse").sideNav();
   $('.button-collapse').sideNav({
-    menuWidth: 240, // Default is 300
+    menuWidth: 250, // Default is 300
     draggable: true, // Choose whether you can drag to open on touch screens,
   });
 

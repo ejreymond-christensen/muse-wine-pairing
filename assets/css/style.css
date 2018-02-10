@@ -128,7 +128,9 @@ body{
   top: 10px;
   left: 10px;
   color: white;
-  font-size: 32px;
+}
+.hamburgerIcon{
+  font-size: 30px;
 }
 /* Recipe preview cards */
 /* Images */
