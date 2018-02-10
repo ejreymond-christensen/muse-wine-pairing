@@ -1,7 +1,6 @@
 var recipeName="";
 var recipeURL="";
-var savedRecipes = [];
-var savedWines = [];
+var wineName="";
 
 $(document).ready(function() {
   //Materialize JS specs
@@ -160,7 +159,7 @@ $(document).ready(function() {
     // generates wine info when you click option one
     $(document).on('click', '#tab1', function() {
       $('.wineInfo').empty();
-      $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn1"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -171,7 +170,7 @@ $(document).ready(function() {
     // generates wine info when you click option 2
     $(document).on('click', '#tab2', function() {
       $('.wineInfo').empty();
-      $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn2"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber + 1].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber + 1].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -182,7 +181,7 @@ $(document).ready(function() {
     // generates wine info when you click option 3
     $(document).on('click', '#tab3', function() {
       $('.wineInfo').empty();
-      $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn3"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber + 2].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber + 2].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -192,7 +191,7 @@ $(document).ready(function() {
     });
 
     //initial wine info for option 1
-    $('.wineInfo').append('<span class="tooltip1 saveWineBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
+    $('.wineInfo').append('<span class="tooltip1 saveWineBtn1"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
     $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber].price + '</p>');
     $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber].vintage + '</p>');
     $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
@@ -227,25 +226,21 @@ $(document).ready(function() {
     });
   }
 
-  // //Eventlistener for the Recipe Box
-  // $(".recipes").on("click", function() {
-  //   showSavedRecipes();
-  //   showSavedWines();
-  // });
-  //
-  // //Function that appends the Recipe box
-  // function showSavedRecipes() {
-  //   $(".savedRecipes").empty();
-  //   for (var i = 0; i < savedRecipes.length; i++) {
-  //     $(".savedRecipes").append("<tr><td>" + savedRecipes[i] + "</td></tr>");
-  //   }
-  // }
-
-  //Function that appends the Wine recipe box
-  function showSavedWines() {
-    $(".savedWines").empty();
-    for (var i = 0; i < savedWines.length; i++) {
-      $(".savedWines").append("<tr><td>" + savedWines[i] + "</td></tr>");
-    }
-  }
+  //Eventlistener for the Recipe Box and to propagate all saved recipes and wine.
+  $(".recipes").on("click", function() {
+    event.preventDefault();
+    uidSet();
+    userRef.once("value").then(function(snapshot) {
+      $(".savedRecipes").empty();
+      snapshot.forEach(function(childSnapshot) {
+        $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"'  target='_blank'>"+childSnapshot.val().name+"</a></div>");
+      });
+    });
+    userRefwine.once("value").then(function(snapshot) {
+      $(".savedWines").empty();
+      snapshot.forEach(function(childSnapshot) {
+        $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+      });
+    });
+  });
 });

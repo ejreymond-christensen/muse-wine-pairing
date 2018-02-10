@@ -201,7 +201,7 @@ body{
   margin-left: 5px;
   float: left;
 }
-.saveWineBtn {
+.saveWineBtn1, .saveWineBtn2, .saveWineBtn3 {
   float: right;
 }
 

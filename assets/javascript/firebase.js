@@ -81,14 +81,22 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   }
 
 });
+
+// ***** RECIPE BOX FUNCTIONALITY *****
+
+//Global variables to store the unique user ids and firebase node structure
 var uid="";
 var userRef="";
+var userRefwine="";
+
+// This function captures the UID from firebase, needs to be delayed from onload for callback time from google.
 var uidSet = function(){
   uid= firebase.auth().currentUser.uid;
   userRef = database.ref("users/" +uid+"/recipes/");
+  userRefwine = database.ref("users/" +uid+"/wines/");
 };
 
-
+//Event Listener for recipe add, pushes to firebase.
 $(document).on("click", ".tooltip", function(){
   event.preventDefault();
   uidSet();
@@ -96,13 +104,63 @@ $(document).on("click", ".tooltip", function(){
     name: recipeName,
     url: recipeURL
   });
+  //Firebase listener to add the recipe to the DOM
   userRef.once("value").then(function(snapshot) {
-    // console.log(snapshot.val());
+    $(".savedRecipes").empty();
     snapshot.forEach(function(childSnapshot) {
-      console.log(childSnapshot.val().name);
-      $(".savedRecipes").empty();
-      $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"'>"+childSnapshot.val().name+"</a></div>");
-      // savedRecipes.push(childSnapshot.val().name);
+      $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"' target='_blank'>"+childSnapshot.val().name+"</a></div>");
+    });
+  });
+});
+
+// Added thre unique wine listeners due to materialize tab structure
+//Event Listener for wine add, pushes to firebase.
+$(document).on("click", ".saveWineBtn1", function(){
+  event.preventDefault();
+  wineName= $("#test1").text();
+  uidSet();
+  userRefwine.push({
+    wine: wineName,
+  });
+  //Firebase listener to add the wineList to the DOM
+  userRefwine.once("value").then(function(snapshot) {
+    $(".savedWines").empty();
+    snapshot.forEach(function(childSnapshot) {
+      $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+    });
+  });
+});
+
+//Event Listener for wine add, pushes to firebase.
+$(document).on("click", ".saveWineBtn2", function(){
+  event.preventDefault();
+  wineName= $("#test2").text();
+  uidSet();
+  userRefwine.push({
+    wine: wineName,
+  });
+  //Firebase listener to add the wineList to the DOM
+  userRefwine.once("value").then(function(snapshot) {
+    $(".savedWines").empty();
+    snapshot.forEach(function(childSnapshot) {
+      $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+    });
+  });
+});
+
+//Event Listener for wine add, pushes to firebase.
+$(document).on("click", ".saveWineBtn3", function(){
+  event.preventDefault();
+  wineName= $("#test3").text();
+  uidSet();
+  userRefwine.push({
+    wine: wineName,
+  });
+  //Firebase listener to add the wineList to the DOM
+  userRefwine.once("value").then(function(snapshot) {
+    $(".savedWines").empty();
+    snapshot.forEach(function(childSnapshot) {
+      $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
     });
   });
 });
