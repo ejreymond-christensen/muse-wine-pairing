@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="appBackground">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Muse of Meals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+  <div class="row noMargin">
+    <div class="col s12 m3 l3" id="menuBar">
+      <div class="brandTitle">
+        <a href="index.html"><h4 class="brandName">Muse of Meals</h4></a>
+      </div>
+      <hr class="hrTitle">
+      <div class="row">
+        <h5 class="cursive">Cooking</h5>
+        <hr class="hrTitle">
+        <div class="input-field col s12">
+          <select multiple class="icons" id="cuisine">
+              <option value="null" disabled selected>Choose your style</option>
+              <option value="american" data-icon="images/office.jpg" class="circle">American</option>
+              <option value="asian" data-icon="images/office.jpg" class="circle">Asian</option>
+              <option value="cajun" data-icon="images/yuna.jpg" class="circle">Cajun & Creole</option>
+              <option value="french" data-icon="images/sample-1.jpg" class="circle">French</option>
+              <option value="indian" data-icon="images/office.jpg" class="circle">Indian</option>
+              <option value="italian" data-icon="images/yuna.jpg" class="circle">Italian</option>
+              <option value="japanese" data-icon="images/yuna.jpg" class="circle">Japanese</option>
+              <option value="mediterranean" data-icon="images/yuna.jpg" class="circle">Mediterranean</option>
+              <option value="mexican" data-icon="images/yuna.jpg" class="circle">Mexican</option>
+              <option value="southwestern" data-icon="images/yuna.jpg" class="circle">Southwestern</option>
+            </select>
+          <label>Select your Cuisine</label>
+        </div>
+        <div multiple class="input-field col s12">
+          <select class="icons" id="meat">
+              <option value="beef, chicken, pork, fish, seafood" disabled selected>Choose your meat</option>
+              <option value="beef" data-icon="assets/imgs/beef.jpg" class="circle">Beef</option>
+              <option value="chicken" data-icon="assets/imgs/chicken.jpg" class="circle">Chicken</option>
+              <option value="duck" data-icon="assets/imgs/chicken.jpg" class="circle">Duck</option>
+              <option value="fish" data-icon="assets/imgs/fish.jpg" class="circle">Fish</option>
+              <option value="lamb" data-icon="assets/imgs/lamb.jpg" class="circle">Lamb</option>
+              <option value="pork" data-icon="assets/imgs/pork.jpg" class="circle">Pork</option>
+              <option value="seafood" data-icon="assets/imgs/seafood.jpg" class="circle">Seafood</option>
+              <option value="vegetarian" data-icon="assets/imgs/seafood.jpg" class="circle">Vegetarian</option>
+            </select>
+          <label>Select your Protein</label>
+        </div>
+        <div class="input-field col s12">
+          <select multiple class="icons" id="ingredients">
+              <option value="null" disabled selected>Choose your options</option>
+              <option value="beans">Beans</option>
+              <option value="fruit">Fruit</option>
+              <option value="garlic">Garlic</option>
+              <option value="greens">Greens</option>
+              <option value="onion">Onion</option>
+              <option value="pasta">Pasta</option>
+              <option value="potato">Potato</option>
+              <option value="rice">Rice</option>
+              <option value="tofu">Tofu</option>
+              <option value="tomato">Tomato</option>
+              <option value="zucchini">Zucchini</option>
+            </select>
+          <label>Specific Ingredients</label>
+        </div>
+        <div class="input-field col s12">
+          <select multiple class="icons" id="allergies">
+              <option value="null" disabled selected>Choose your restictions</option>
+              <option value="gluten" data-icon="assets/imgs/bread.jpeg" class="circle">Gluten</option>
+              <option value="lactose" data-icon="assets/imgs/milk.jpg" class="circle">Lactose</option>
+              <option value="nuts" data-icon="assets/imgs/nuts.jpg" class="circle">Nuts</option>
+              <option value="seafood" data-icon="assets/imgs/seafood.jpg" class="circle">Seafood</option>
+            </select>
+          <label>Allergies</label>
+        </div>
+        <div class="row">
+          <hr class="hrTitle">
+          <a class="waves-effect waves-light btn" id="searchFood"><i class="material-icons right">restaurant_menu</i>Lets Cook!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m9 l9" id="mainContent">
+      <div class="main">
+        <h4 id="tempText">Waiting for your choices to inspire your meal</h4>
+          <a class="waves-effect waves-light btn modal-trigger modalStyle red circle" href="#modal1">Info </a>
+        <div class="row" id="cardHolder">
+        </div>
+        <a class="waves-effect waves-light btn modal-trigger modalStyle2 red " href="#modal2">feedback</a>
+      </div>
+    </div>
+  </div>
+  <!--Modal One-->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Hello Fine Diners!</h4>
+      <h5>Lets get Started</h5>
+      <p>This is a very fun and easy to use app that helps all of us when in doubt of our culinary expertise. By mixing and matching the perfect meal starting on your style of cuisine all the way down to ingredients , sides and much more. Then
+        we take all your ideas and we move forward with our very unique and cautious drink pairing that will be a perfect complement for your meal and occasion.</p>
+      <p>So, first things first choose a Style (this is fun) then move down the list of options. Not sure what to pick? Don't sweat it , we will find a great recommendation just for you. Next click on drink menu and we will do the magic for you
+        and pair your meal with a great drink selection to go with it. Making you the star of the night while enjoying something unique and Delicious. hint: its ok to be creative ;) </p>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">I'm Ready</a>
+      </div>
+    </div>
+  </div>
+  <!--Modal Two-->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>We want to hear from You!</h4>
+      <label for="textarea1">Tell us More</label>
+      <textarea id="textarea1" class="materialize-textarea"></textarea>
+      <label for="icon_prefix">Name</label>
+      <input id="icon_prefix" type="text" class="validate">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+  <footer class="page-footer grey darken-3">
+    <div class="footer-copyright grey darken-3">
+      <div class="container">
+        <p class="footerContent">© Copyright Group1 UT BootCamp Jan-2018</p>
+        <p class="footerContent">Grant Ferrell, Mario Garza, Alex Gonzalez, Elliot Reymond-Christensen</p>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>

@@ -218,7 +218,7 @@ $(document).ready(function() {
   }
 
   //Eventlistener for the Recipe Box
-  $(".modalStyle6").on("click", function() {
+  $(".recipes").on("click", function() {
     showSavedRecipes();
     showSavedWines();
   });
