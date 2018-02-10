@@ -1,11 +1,11 @@
 //Init firebase
 var config = {
-  apiKey: "AIzaSyAGEuO9L4cgTyBGEpagy8PTucvFKCqSfYc",
-  authDomain: "ut-project1-muse.firebaseapp.com",
-  databaseURL: "https://ut-project1-muse.firebaseio.com",
-  projectId: "ut-project1-muse",
+  apiKey: "AIzaSyC_-2NpiT74E5gHbr_Z_DUJdb6DAF0o4Mg",
+  authDomain: "project1-muse.firebaseapp.com",
+  databaseURL: "https://project1-muse.firebaseio.com",
+  projectId: "project1-muse",
   storageBucket: "",
-  messagingSenderId: "580025468102"
+  messagingSenderId: "956691925412"
 };
 firebase.initializeApp(config);
 
@@ -80,4 +80,20 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     $('#btnLogin').removeClass('hide');
   }
 
+});
+
+//Recipe Functions
+
+$(document).on("click", ".tooltip", function(){
+  event.preventDefault();
+  var userRef = database.ref("users/" + firebase.auth().R+"/recipes/");
+  userRef.push({
+    name: recipeName,
+    url: recipeURL
+  });
+});
+
+database.ref("users/"+firebase.auth().R+"/recipes").on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.child().name);
+  $(".savedRecipes").append("<p>"+childSnapshot.child().name+"</p>");
 });

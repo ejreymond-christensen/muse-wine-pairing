@@ -1,3 +1,5 @@
+var recipeName="";
+var recipeURL="";
 $(document).ready(function() {
   //Materialize JS specs
   $('.parallax').parallax();
@@ -120,6 +122,9 @@ $(document).ready(function() {
 
     var queryURL = "https://api.yummly.com/v1/api/recipe/" + getRecipeId + "?_app_id=78251404&_app_key=ae65a091779f9ce10b68bb9d74e5ebdf";
     $.ajax({"url": queryURL, "method": "GET"}).done(function(response) {
+      console.log(response.name);
+      recipeName= response.name;
+      recipeURL= response.source.sourceRecipeUrl;
       $(".mainReveal").empty();
       $(".card-action").empty();
       $(".mainReveal").append('<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>' + response.name + '</span>');
