@@ -94,11 +94,14 @@ body{
 #searchFood{
   float:right;
   margin-right: 20px;
-  margin-bottom: 60px;
 }
 
 .subtitle{
   margin-left: 7px;
+}
+
+.dropdown-content{
+  margin-bottom: 120px;
 }
 
 /* Main Content for app */
