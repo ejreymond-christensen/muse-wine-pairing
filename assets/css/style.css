@@ -201,6 +201,9 @@ body{
   margin-left: 5px;
   float: left;
 }
+.saveWineBtn {
+  float: right;
+}
 
 /* Wine Styles */
 
@@ -233,6 +236,11 @@ body{
   background-color: #3895c9;
 }
 
+/*saved Recipe Box Style*/
+.savedRecipes {
+  border-right: 10px solid #2C2C2C;
+}
+
 /* *****Modals Styles***** */
 .modalStyle{
   top:5px;
@@ -242,24 +250,8 @@ body{
   padding: 0 8px;
 }
 
-.modalStyle2{
-  bottom:80px;
-  right:5px;
-  position:absolute;
-  border-radius:60px;
-  padding: 0 8px;
-}
-
 #modal5{
   max-width: 400px;
-}
-
-.modalStyle6{
-  top: 50px;
-  right:5px;
-  position:absolute;
-  border-radius:60px;
-  padding: 0 8px;
 }
 
 .modalPadding {
@@ -268,7 +260,11 @@ body{
   border-radius:40px;
 }
 
-/* tooltip/snack */
+#modal6 {
+  text-align: center;
+}
+
+/* tooltip/meal */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -303,6 +299,46 @@ body{
 }
 
 .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* tooltip/wine */
+.tooltip1 {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip1 .tooltiptext1 {
+    visibility: hidden;
+    width: 80px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -80%;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 15px;
+}
+
+.tooltip1 .tooltiptext1::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltip1:hover .tooltiptext1 {
     visibility: visible;
     opacity: 1;
 }

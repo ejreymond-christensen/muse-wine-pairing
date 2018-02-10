@@ -89,10 +89,6 @@ var uidSet = function(){
 };
 
 
-//Recipe Functions
-// var uid= "";
-// // console.log(uid)
-// var userRef = "";
 $(document).on("click", ".tooltip", function(){
   event.preventDefault();
   uidSet();
@@ -104,15 +100,9 @@ $(document).on("click", ".tooltip", function(){
     // console.log(snapshot.val());
     snapshot.forEach(function(childSnapshot) {
       console.log(childSnapshot.val().name);
+      $(".savedRecipes").empty();
       $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"'>"+childSnapshot.val().name+"</a></div>");
       // savedRecipes.push(childSnapshot.val().name);
-  });
+    });
   });
 });
-
-// userRef.child('name').on("child_added", function(childSnapshot) {
-//   console.log("coucou");
-//   // recipe = childSnapshot.val().name;
-//   // url= childSnapshot.val().url;
-//   // $(".savedRecipes").append("<p>"+childSnapshot.val().name+"</p>");
-// });
