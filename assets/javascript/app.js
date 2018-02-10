@@ -216,7 +216,7 @@ $(document).ready(function() {
     }
 
     //Snooth Wine API Function
-    var queryURL = "http://api.snooth.com/wines/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&q=" + wineType + "+wine&n=50&xp=30&c=US";
+    var queryURL = "https://api.snooth.com/wines/?akey=mhf90w0jypw8fx3cukga31eas2yinav1c7w0xalhucisslg6&q=" + wineType + "+wine&n=50&xp=30&c=US";
     $.ajax({"url": queryURL, "dataType": "JSON", "method": "GET"}).done(function(wineData) {
       wineList = wineData;
       showWineOptions();
