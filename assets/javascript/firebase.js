@@ -81,19 +81,38 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   }
 
 });
+var uid="";
+var userRef="";
+var uidSet = function(){
+  uid= firebase.auth().currentUser.uid;
+  userRef = database.ref("users/" +uid+"/recipes/");
+};
+
 
 //Recipe Functions
-
+// var uid= "";
+// // console.log(uid)
+// var userRef = "";
 $(document).on("click", ".tooltip", function(){
   event.preventDefault();
-  var userRef = database.ref("users/" + firebase.auth().R+"/recipes/");
+  uidSet();
   userRef.push({
     name: recipeName,
     url: recipeURL
   });
+  userRef.once("value").then(function(snapshot) {
+    // console.log(snapshot.val());
+    snapshot.forEach(function(childSnapshot) {
+      console.log(childSnapshot.val().name);
+      $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"'>"+childSnapshot.val().name+"</a></div>");
+      // savedRecipes.push(childSnapshot.val().name);
+  });
+  });
 });
 
-database.ref("users/"+firebase.auth().R+"/recipes").on("child_added", function(childSnapshot) {
-  console.log(childSnapshot.child().name);
-  $(".savedRecipes").append("<p>"+childSnapshot.child().name+"</p>");
-});
+// userRef.child('name').on("child_added", function(childSnapshot) {
+//   console.log("coucou");
+//   // recipe = childSnapshot.val().name;
+//   // url= childSnapshot.val().url;
+//   // $(".savedRecipes").append("<p>"+childSnapshot.val().name+"</p>");
+// });

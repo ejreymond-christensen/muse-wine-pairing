@@ -1,5 +1,8 @@
 var recipeName="";
 var recipeURL="";
+var savedRecipes = [];
+var savedWines = [];
+
 $(document).ready(function() {
   //Materialize JS specs
   $('.parallax').parallax();
@@ -17,8 +20,6 @@ $(document).ready(function() {
   var getRecipeId;
   var wineList = [];
   var meat;
-  var savedRecipes = ["Chicken Shawarma", "Chick Fil A", "Beef Bugolgi", "Scrambled Eggs"];
-  var savedWines = ["Slow Press", "Darkhorse", "Casillero del diablo", "barefoot"];
 
   //Event Listener for searching
   $("#searchFood").on("click", function() {
@@ -222,19 +223,19 @@ $(document).ready(function() {
     });
   }
 
-  //Eventlistener for the Recipe Box
-  $(".recipes").on("click", function() {
-    showSavedRecipes();
-    showSavedWines();
-  });
-
-  //Function that appends the Recipe box
-  function showSavedRecipes() {
-    $(".savedRecipes").empty();
-    for (var i = 0; i < savedRecipes.length; i++) {
-      $(".savedRecipes").append("<tr><td>" + savedRecipes[i] + "</td></tr>");
-    }
-  }
+  // //Eventlistener for the Recipe Box
+  // $(".recipes").on("click", function() {
+  //   showSavedRecipes();
+  //   showSavedWines();
+  // });
+  //
+  // //Function that appends the Recipe box
+  // function showSavedRecipes() {
+  //   $(".savedRecipes").empty();
+  //   for (var i = 0; i < savedRecipes.length; i++) {
+  //     $(".savedRecipes").append("<tr><td>" + savedRecipes[i] + "</td></tr>");
+  //   }
+  // }
 
   //Function that appends the Wine recipe box
   function showSavedWines() {
