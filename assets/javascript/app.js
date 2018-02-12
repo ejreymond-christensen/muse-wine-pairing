@@ -137,7 +137,7 @@ $(document).ready(function() {
       }
       $(".mainReveal").append(ingredientsList);
       $(".card-action").append('<a class="waves-effect waves-light btn sourceRecipeBtn right-align" href="' + response.source.sourceRecipeUrl + '" target="_blank"><i class="material-icons right">restaurant_menu</i> Read Directions</a>');
-      $(".card-action").prepend('<span class="tooltip saveRecipeBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext">Save recipe</span></span>');
+      $(".card-action").prepend('<span class="tooltip saveRecipeBtn" active="true"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext">Save recipe</span></span>');
       console.log(queryURL);
     }).fail(function(msg) {
       $("#errorMessage").html("Sorry! We couldn't reach Yummly at this time. Please try back again later.");
