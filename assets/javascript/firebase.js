@@ -8,7 +8,7 @@
 //   messagingSenderId: "956691925412"
 // };
 // firebase.initializeApp(config);
-// Initialize Firebase
+// Initialize Alex Firebase
   var config = {
     apiKey: "AIzaSyA1KzEa4kELGKIu_12yooVZezTKQoCQwrg",
     authDomain: "muse-b52c7.firebaseapp.com",
@@ -111,6 +111,7 @@ var uidSet = function(){
 //Event Listener for recipe add, pushes to firebase.
 $(document).on("click", ".saveRecipeBtn", function(){
   event.preventDefault();
+  // checks to see if user has saved current recipe
   if ($(this).attr("active") ==="true") {
     uidSet();
     userRef.push({
@@ -126,6 +127,7 @@ $(document).on("click", ".saveRecipeBtn", function(){
     });
     $(this).attr("active", "false");
   }
+  // lets user know they have already saved current recipe 
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
     Materialize.toast('Recipe already saved!', 3000) // 4000 is the duration of the toast
@@ -136,10 +138,12 @@ $(document).on("click", ".saveRecipeBtn", function(){
 
 // Added thre unique wine listeners due to materialize tab structure
 //Event Listener for wine add, pushes to firebase.
+// keeps track to see if user has saved the wine options 
 var savedWine1 = false;
 var savedWine2 = false;
 var savedWine3 = false;
 $(document).on("click", ".saveWineBtn1", function(){
+  // checks to see if user has saved current wine option 1
   if (savedWine1 === false) {
     event.preventDefault();
     wineName= $("#test1").text();
@@ -156,6 +160,7 @@ $(document).on("click", ".saveWineBtn1", function(){
     });
     savedWine1 = true;
   }
+  // lets user know they have already saved current wine option
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
     Materialize.toast('Wine option 1 already saved!', 3000) // 4000 is the duration of the toast
@@ -164,6 +169,7 @@ $(document).on("click", ".saveWineBtn1", function(){
 
 //Event Listener for wine add, pushes to firebase.
 $(document).on("click", ".saveWineBtn2", function(){
+  // checks to see if user has saved current wine option 2
   if (savedWine2 === false) {
     event.preventDefault();
     wineName= $("#test2").text();
@@ -180,6 +186,7 @@ $(document).on("click", ".saveWineBtn2", function(){
     });
     savedWine2 = true;
   }
+  // lets user know they have already saved current wine option
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
   Materialize.toast('Wine option 2 already saved!', 3000) // 4000 is the duration of the toast
@@ -188,6 +195,7 @@ $(document).on("click", ".saveWineBtn2", function(){
 
 //Event Listener for wine add, pushes to firebase.
 $(document).on("click", ".saveWineBtn3", function(){
+  // checks to see if user has saved current wine option 3
   if (savedWine3 === false) {
     event.preventDefault();
     wineName= $("#test3").text();
@@ -204,12 +212,13 @@ $(document).on("click", ".saveWineBtn3", function(){
     });
     savedWine3 = true;
   }
+  // lets user know they have already saved current wine option
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
   Materialize.toast('Wine option 3 already saved!', 3000) // 4000 is the duration of the toast
   }
 });
-
+// when user gets new wine options they can save new wine options 
 $(document).on("click", "#searchFood", function() {
   savedWine1 = false;
   savedWine2 = false;
