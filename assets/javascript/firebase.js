@@ -1,13 +1,23 @@
-//Init firebase
-var config = {
-  apiKey: "AIzaSyC_-2NpiT74E5gHbr_Z_DUJdb6DAF0o4Mg",
-  authDomain: "project1-muse.firebaseapp.com",
-  databaseURL: "https://project1-muse.firebaseio.com",
-  projectId: "project1-muse",
-  storageBucket: "",
-  messagingSenderId: "956691925412"
-};
-firebase.initializeApp(config);
+// //Init firebase
+// var config = {
+//   apiKey: "AIzaSyC_-2NpiT74E5gHbr_Z_DUJdb6DAF0o4Mg",
+//   authDomain: "project1-muse.firebaseapp.com",
+//   databaseURL: "https://project1-muse.firebaseio.com",
+//   projectId: "project1-muse",
+//   storageBucket: "",
+//   messagingSenderId: "956691925412"
+// };
+// firebase.initializeApp(config);
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA1KzEa4kELGKIu_12yooVZezTKQoCQwrg",
+    authDomain: "muse-b52c7.firebaseapp.com",
+    databaseURL: "https://muse-b52c7.firebaseio.com",
+    projectId: "muse-b52c7",
+    storageBucket: "muse-b52c7.appspot.com",
+    messagingSenderId: "100496649714"
+  };
+  firebase.initializeApp(config);
 
 var database = firebase.database();
 
@@ -99,70 +109,109 @@ var uidSet = function(){
 };
 
 //Event Listener for recipe add, pushes to firebase.
-$(document).on("click", ".tooltip", function(){
+$(document).on("click", ".saveRecipeBtn", function(){
   event.preventDefault();
-  uidSet();
-  userRef.push({
-    name: recipeName,
-    url: recipeURL
-  });
-  //Firebase listener to add the recipe to the DOM
-  userRef.once("value").then(function(snapshot) {
-    $(".savedRecipes").empty();
-    snapshot.forEach(function(childSnapshot) {
-      $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"' target='_blank'>"+childSnapshot.val().name+"</a></div>");
+  if ($(this).attr("active") ==="true") {
+    uidSet();
+    userRef.push({
+      name: recipeName,
+      url: recipeURL
     });
-  });
+    //Firebase listener to add the recipe to the DOM
+    userRef.once("value").then(function(snapshot) {
+      $(".savedRecipes").empty();
+      snapshot.forEach(function(childSnapshot) {
+        $(".savedRecipes").append("<div><a href='"+childSnapshot.val().url+"' target='_blank'>"+childSnapshot.val().name+"</a></div>");
+      });
+    });
+    $(this).attr("active", "false");
+  }
+  else {
+    // Materialize.toast(message, displayLength, className, completeCallback);
+    Materialize.toast('Recipe already saved!', 3000) // 4000 is the duration of the toast
+  }
+
+
 });
 
 // Added thre unique wine listeners due to materialize tab structure
 //Event Listener for wine add, pushes to firebase.
+var savedWine1 = false;
+var savedWine2 = false;
+var savedWine3 = false;
 $(document).on("click", ".saveWineBtn1", function(){
-  event.preventDefault();
-  wineName= $("#test1").text();
-  uidSet();
-  userRefwine.push({
-    wine: wineName,
-  });
-  //Firebase listener to add the wineList to the DOM
-  userRefwine.once("value").then(function(snapshot) {
-    $(".savedWines").empty();
-    snapshot.forEach(function(childSnapshot) {
-      $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+  if (savedWine1 === false) {
+    event.preventDefault();
+    wineName= $("#test1").text();
+    uidSet();
+    userRefwine.push({
+      wine: wineName,
     });
-  });
+    //Firebase listener to add the wineList to the DOM
+    userRefwine.once("value").then(function(snapshot) {
+      $(".savedWines").empty();
+      snapshot.forEach(function(childSnapshot) {
+        $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+      });
+    });
+    savedWine1 = true;
+  }
+  else {
+    // Materialize.toast(message, displayLength, className, completeCallback);
+    Materialize.toast('Wine option 1 already saved!', 3000) // 4000 is the duration of the toast
+  }
 });
 
 //Event Listener for wine add, pushes to firebase.
 $(document).on("click", ".saveWineBtn2", function(){
-  event.preventDefault();
-  wineName= $("#test2").text();
-  uidSet();
-  userRefwine.push({
-    wine: wineName,
-  });
-  //Firebase listener to add the wineList to the DOM
-  userRefwine.once("value").then(function(snapshot) {
-    $(".savedWines").empty();
-    snapshot.forEach(function(childSnapshot) {
-      $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+  if (savedWine2 === false) {
+    event.preventDefault();
+    wineName= $("#test2").text();
+    uidSet();
+    userRefwine.push({
+      wine: wineName,
     });
-  });
+    //Firebase listener to add the wineList to the DOM
+    userRefwine.once("value").then(function(snapshot) {
+      $(".savedWines").empty();
+      snapshot.forEach(function(childSnapshot) {
+        $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+      });
+    });
+    savedWine2 = true;
+  }
+  else {
+    // Materialize.toast(message, displayLength, className, completeCallback);
+  Materialize.toast('Wine option 2 already saved!', 3000) // 4000 is the duration of the toast
+  }
 });
 
 //Event Listener for wine add, pushes to firebase.
 $(document).on("click", ".saveWineBtn3", function(){
-  event.preventDefault();
-  wineName= $("#test3").text();
-  uidSet();
-  userRefwine.push({
-    wine: wineName,
-  });
-  //Firebase listener to add the wineList to the DOM
-  userRefwine.once("value").then(function(snapshot) {
-    $(".savedWines").empty();
-    snapshot.forEach(function(childSnapshot) {
-      $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+  if (savedWine3 === false) {
+    event.preventDefault();
+    wineName= $("#test3").text();
+    uidSet();
+    userRefwine.push({
+      wine: wineName,
     });
-  });
+    //Firebase listener to add the wineList to the DOM
+    userRefwine.once("value").then(function(snapshot) {
+      $(".savedWines").empty();
+      snapshot.forEach(function(childSnapshot) {
+        $(".savedWines").append("<div>"+childSnapshot.val().wine+"</div>");
+      });
+    });
+    savedWine3 = true;
+  }
+  else {
+    // Materialize.toast(message, displayLength, className, completeCallback);
+  Materialize.toast('Wine option 3 already saved!', 3000) // 4000 is the duration of the toast
+  }
+});
+
+$(document).on("click", "#searchFood", function() {
+  savedWine1 = false;
+  savedWine2 = false;
+  savedWine3 = false;
 });

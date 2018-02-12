@@ -137,7 +137,7 @@ $(document).ready(function() {
       }
       $(".mainReveal").append(ingredientsList);
       $(".card-action").append('<a class="waves-effect waves-light btn sourceRecipeBtn right-align" href="' + response.source.sourceRecipeUrl + '" target="_blank"><i class="material-icons right">restaurant_menu</i> Read Directions</a>');
-      $(".card-action").prepend('<span class="tooltip saveRecipeBtn"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext">Save recipe</span></span>');
+      $(".card-action").prepend('<span class="tooltip saveRecipeBtn" active="true"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext">Save recipe</span></span>');
       console.log(queryURL);
     }).fail(function(msg) {
       $("#errorMessage").html("Sorry! We couldn't reach Yummly at this time. Please try back again later.");
@@ -158,7 +158,7 @@ $(document).ready(function() {
     // generates wine info when you click option one
     $(document).on('click', '#tab1', function() {
       $('.wineInfo').empty();
-      $('.wineInfo').append('<span class="tooltip1 saveWineBtn1"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
+      $('.wineInfo').append('<span class="tooltip1 saveWineBtn1" active="true"><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a><span class="tooltiptext1">Save wine</span></span>');
       $('.wineInfo').append('<p><u><b>Price</b></u>: ' + wineList.wines[randomNumber].price + '</p>');
       $('.wineInfo').append('<p><u><b>Year</b></u>: ' + wineList.wines[randomNumber].vintage + '</p>');
       $('.wineInfo').append('<p><u><b>Type</b></u>: ' + typeWine + '</p>');
