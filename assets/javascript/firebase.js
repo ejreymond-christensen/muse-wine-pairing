@@ -74,7 +74,7 @@ $('#btnSignUp').on('click', e => {
 });
 
 //Eventlistener logout
-$('#btnLogOut').on('click', e => {
+$('#logOut').on('click', e => {
   firebase.auth().signOut();
   $(".savedWines").empty();
   $(".savedRecipes").empty();
@@ -86,12 +86,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log(firebaseUser);
     $('#btnLogOut').removeClass('hide');
     $('#btnLogin').addClass('hide');
+    $('#logIn').addClass('btnHide');
+    $('#logOut').removeClass('btnHide');
   } else {
     console.log('not logged in');
     $('#btnLogOut').addClass('hide');
     $('#btnLogin').removeClass('hide');
+    $('#logIn').removeClass('btnHide');
+    $('#logOut').addClass('btnHide');
   }
-  //TODO Add userlogin
 });
 
 // ***** RECIPE BOX FUNCTIONALITY *****
@@ -127,7 +130,7 @@ $(document).on("click", ".saveRecipeBtn", function(){
     });
     $(this).attr("active", "false");
   }
-  // lets user know they have already saved current recipe 
+  // lets user know they have already saved current recipe
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
     Materialize.toast('Recipe already saved!', 3000) // 4000 is the duration of the toast
@@ -138,7 +141,7 @@ $(document).on("click", ".saveRecipeBtn", function(){
 
 // Added thre unique wine listeners due to materialize tab structure
 //Event Listener for wine add, pushes to firebase.
-// keeps track to see if user has saved the wine options 
+// keeps track to see if user has saved the wine options
 var savedWine1 = false;
 var savedWine2 = false;
 var savedWine3 = false;
@@ -218,7 +221,7 @@ $(document).on("click", ".saveWineBtn3", function(){
   Materialize.toast('Wine option 3 already saved!', 3000) // 4000 is the duration of the toast
   }
 });
-// when user gets new wine options they can save new wine options 
+// when user gets new wine options they can save new wine options
 $(document).on("click", "#searchFood", function() {
   savedWine1 = false;
   savedWine2 = false;

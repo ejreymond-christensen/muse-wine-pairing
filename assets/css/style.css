@@ -248,6 +248,9 @@ body{
 }
 
 /* *****Modals Styles***** */
+.btnHide{
+  display: none !important;
+}
 .modalStyle{
   top:5px;
   right:5px;
@@ -380,5 +383,6 @@ body{
 @media only screen and (max-width:500px){
   .miniButton{
     margin-right: 5px !important;
+    font-size: 12px;
   }
 }
