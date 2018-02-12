@@ -81,7 +81,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     $('#btnLogOut').addClass('hide');
     $('#btnLogin').removeClass('hide');
   }
-
+  //TODO Add userlogin
 });
 
 // ***** RECIPE BOX FUNCTIONALITY *****
