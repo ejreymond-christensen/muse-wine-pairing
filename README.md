@@ -12,6 +12,7 @@ This app was created to encourage people to cook and enjoy the basic pleasures o
 ## How to use Muse
 
 From the landing page click the `Get Started` button. Now you will be taken to the main apps page. In the upper right hand corner, you will find a hamburger icon. This will give you the option to find more info on the app, provide feedback to the developers, log in to your account (or sign out), and view your recipe box.
+![alt text](https://github.com/ejreymond-christensen/ut-project1-muse/blob/master/assets/imgs/readme/buttons.png)
 
 ##### Search Bar
 
