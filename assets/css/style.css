@@ -397,5 +397,11 @@ body{
   }
   #list{
     right: 0 !important;
+  }
 }
+
+@media only screen and (max-width:600px){
+  #cardHolder{
+    margin-top: 20px !important;
+  }
 }
