@@ -249,6 +249,12 @@ body{
 .savedRecipes {
   border-right: 10px solid #2C2C2C;
 }
+/*.btn {
+  padding: 0 .8rem;
+}*/
+.btn-floating {
+  margin-bottom: 10px;
+}
 
 /* *****Modals Styles***** */
 .miniButton{
@@ -297,7 +303,7 @@ body{
     border-radius: 6px;
     padding: 2px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 100;
     bottom: -80%;
     left: 50%;
     margin-left: -40px;
@@ -336,7 +342,7 @@ body{
     border-radius: 6px;
     padding: 2px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 100;
     bottom: -80%;
     left: 50%;
     margin-left: -40px;
@@ -405,3 +411,12 @@ body{
     margin-top: 20px !important;
   }
 }
+
+@media only screen and (max-width:750px){
+  .sourceRecipeBtn{
+    padding: 0 .8rem;
+  }
+}
+
+
+
