@@ -1,23 +1,13 @@
-// //Init firebase
-// var config = {
-//   apiKey: "AIzaSyC_-2NpiT74E5gHbr_Z_DUJdb6DAF0o4Mg",
-//   authDomain: "project1-muse.firebaseapp.com",
-//   databaseURL: "https://project1-muse.firebaseio.com",
-//   projectId: "project1-muse",
-//   storageBucket: "",
-//   messagingSenderId: "956691925412"
-// };
-// firebase.initializeApp(config);
-// Initialize Alex Firebase
-  var config = {
-    apiKey: "AIzaSyA1KzEa4kELGKIu_12yooVZezTKQoCQwrg",
-    authDomain: "muse-b52c7.firebaseapp.com",
-    databaseURL: "https://muse-b52c7.firebaseio.com",
-    projectId: "muse-b52c7",
-    storageBucket: "muse-b52c7.appspot.com",
-    messagingSenderId: "100496649714"
-  };
-  firebase.initializeApp(config);
+//Init firebase
+var config = {
+  apiKey: "AIzaSyC_-2NpiT74E5gHbr_Z_DUJdb6DAF0o4Mg",
+  authDomain: "project1-muse.firebaseapp.com",
+  databaseURL: "https://project1-muse.firebaseio.com",
+  projectId: "project1-muse",
+  storageBucket: "",
+  messagingSenderId: "956691925412"
+};
+firebase.initializeApp(config);
 
 var database = firebase.database();
 
@@ -133,7 +123,7 @@ $(document).on("click", ".saveRecipeBtn", function(){
   // lets user know they have already saved current recipe
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
-    Materialize.toast('Recipe already saved!', 3000) // 4000 is the duration of the toast
+    Materialize.toast('Recipe already saved!', 3000); // 4000 is the duration of the toast
   }
 
 
@@ -166,7 +156,7 @@ $(document).on("click", ".saveWineBtn1", function(){
   // lets user know they have already saved current wine option
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
-    Materialize.toast('Wine option 1 already saved!', 3000) // 4000 is the duration of the toast
+    Materialize.toast('Wine option 1 already saved!', 3000); // 4000 is the duration of the toast
   }
 });
 
@@ -192,7 +182,7 @@ $(document).on("click", ".saveWineBtn2", function(){
   // lets user know they have already saved current wine option
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
-  Materialize.toast('Wine option 2 already saved!', 3000) // 4000 is the duration of the toast
+  Materialize.toast('Wine option 2 already saved!', 3000); // 4000 is the duration of the toast
   }
 });
 
@@ -218,7 +208,7 @@ $(document).on("click", ".saveWineBtn3", function(){
   // lets user know they have already saved current wine option
   else {
     // Materialize.toast(message, displayLength, className, completeCallback);
-  Materialize.toast('Wine option 3 already saved!', 3000) // 4000 is the duration of the toast
+  Materialize.toast('Wine option 3 already saved!', 3000); // 4000 is the duration of the toast
   }
 });
 // when user gets new wine options they can save new wine options

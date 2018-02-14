@@ -371,17 +371,19 @@ body{
 /* *****Footer Section***** */
 /* STICKY FOOTER */
 .wrapper {
-  min-height: 90.25%;}
+  min-height: 90.25%;
   /*Equal to height of footer, but also accounting for potential margin-bottom of last child */
   margin-bottom: -59px;
 }
-.footer,
-.push {
+
+.push{
   height: 59px;
 }
+
 .footer{
   position: sticky;
   z-index: 999;
+  height: 59px;
 }
 
 .page-footer{
@@ -418,6 +420,3 @@ body{
     padding: 0 .8rem;
   }
 }
-
-
-
