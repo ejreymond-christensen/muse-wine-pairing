@@ -371,7 +371,6 @@ body{
 /* *****Footer Section***** */
 /* STICKY FOOTER */
 .wrapper {
-  min-height: 90.25%;
   /*Equal to height of footer, but also accounting for potential margin-bottom of last child */
   margin-bottom: -59px;
 }
