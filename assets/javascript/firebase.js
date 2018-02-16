@@ -1,11 +1,11 @@
 //Init firebase
 var config = {
-  apiKey: "AIzaSyC_-2NpiT74E5gHbr_Z_DUJdb6DAF0o4Mg",
-  authDomain: "project1-muse.firebaseapp.com",
-  databaseURL: "https://project1-muse.firebaseio.com",
-  projectId: "project1-muse",
-  storageBucket: "",
-  messagingSenderId: "956691925412"
+  apiKey: "AIzaSyAO4TwgC-HcLc83udV1uinzU31Cvkzle_Q",
+  authDomain: "muse2-9cb49.firebaseapp.com",
+  databaseURL: "https://muse2-9cb49.firebaseio.com",
+  projectId: "muse2-9cb49",
+  storageBucket: "muse2-9cb49.appspot.com",
+  messagingSenderId: "109782950734"
 };
 firebase.initializeApp(config);
 

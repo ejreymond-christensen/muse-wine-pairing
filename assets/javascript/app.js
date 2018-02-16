@@ -148,7 +148,7 @@ $(document).ready(function() {
   //Function that populates the Wine info onto the DOM
   function showWineOptions() {
     //generates random number so the same wines aren't shown every time
-    var randomNumber = Math.floor(Math.random() * wineList.wines.length);
+    var randomNumber = Math.floor(Math.random() * (wineList.wines.length -3));
     var typeWine;
     if (wineList.wines[randomNumber].type === "") {
       typeWine = "Red Wine";
