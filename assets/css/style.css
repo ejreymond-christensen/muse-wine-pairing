@@ -373,7 +373,7 @@ body{
 .wrapper {
   height: 100%;
   /*Equal to height of footer, but also accounting for potential margin-bottom of last child */
-  margin-bottom: -59px;
+  /* margin-bottom: -59px; */
 }
 
 .push{
