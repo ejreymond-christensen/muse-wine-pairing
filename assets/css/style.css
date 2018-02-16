@@ -10,8 +10,10 @@ html{
 }
 
 body{
-  height: 100%;
   margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /* *****Landing Page Styles***** */
@@ -371,7 +373,7 @@ body{
 /* *****Footer Section***** */
 /* STICKY FOOTER */
 .wrapper {
-  height: auto;
+  flex: 1 0 auto;
   /*Equal to height of footer, but also accounting for potential margin-bottom of last child */
   /* margin-bottom: -59px; */
 }
