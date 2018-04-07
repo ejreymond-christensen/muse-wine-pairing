@@ -1,5 +1,5 @@
 # Muse Recipe and Wine pairing App
-Muse - Recipe and Drink app
+Muse of Meals- Recipe and Drink app
 
 ## Muse of Meals
 
